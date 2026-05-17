@@ -22,10 +22,14 @@ namespace WebApplication3.Repo.Folder_OrderItem
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    @"SELECT item_id, dish_name, detail,
-                             cost, vat, stock, [type]
-                      FROM order_item
-                      ORDER BY dish_name";
+                    @"SELECT menuItemID,
+                             description,
+                             price,
+                             vat_category,
+                             course_type,
+                             quantity
+                      FROM MenuItem
+                      ORDER BY menuItemID";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);
@@ -52,10 +56,14 @@ namespace WebApplication3.Repo.Folder_OrderItem
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    @"SELECT item_id, dish_name, detail,
-                             cost, vat, stock, [type]
-                      FROM order_item
-                      WHERE item_id = @id";
+                    @"SELECT menuItemID,
+                             description,
+                             price,
+                             vat_category,
+                             course_type,
+                             quantity
+                      FROM MenuItem
+                      WHERE menuItemID = @id";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);
@@ -76,39 +84,43 @@ namespace WebApplication3.Repo.Folder_OrderItem
             return item;
         }
 
-        public void Add(OrderItem orderItem)
+        public void Create(OrderItem orderItem)
         {
             using (SqlConnection connection =
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    @"INSERT INTO order_item
-                      (dish_name, detail, cost, vat, stock, [type])
+                    @"INSERT INTO MenuItem
+                      (description,
+                       price,
+                       vat_category,
+                       course_type,
+                       quantity)
 
                       VALUES
-                      (@dish_name, @detail, @cost,
-                       @vat, @stock, @type)";
+                      (@description,
+                       @price,
+                       @vat_category,
+                       @course_type,
+                       @quantity)";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@dish_name",
-                    orderItem.Dish_name);
+                command.Parameters.AddWithValue("@description",
+                    orderItem.Description);
 
-                command.Parameters.AddWithValue("@detail",
-                    orderItem.Details);
-
-                command.Parameters.AddWithValue("@cost",
+                command.Parameters.AddWithValue("@price",
                     orderItem.Price);
 
-                command.Parameters.AddWithValue("@vat",
-                    orderItem.VAT);
+                command.Parameters.AddWithValue("@vat_category",
+                    orderItem.VatCategory);
 
-                command.Parameters.AddWithValue("@stock",
-                    orderItem.Stock);
+                command.Parameters.AddWithValue("@course_type",
+                    orderItem.CourseType);
 
-                command.Parameters.AddWithValue("@type",
-                    orderItem.Type);
+                command.Parameters.AddWithValue("@quantity",
+                    orderItem.Quantity);
 
                 connection.Open();
 
@@ -122,38 +134,34 @@ namespace WebApplication3.Repo.Folder_OrderItem
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    @"UPDATE order_item
-                      SET dish_name = @dish_name,
-                          detail = @detail,
-                          cost = @cost,
-                          vat = @vat,
-                          stock = @stock,
-                          [type] = @type
-                      WHERE item_id = @id";
+                    @"UPDATE MenuItem
+                      SET description = @description,
+                          price = @price,
+                          vat_category = @vat_category,
+                          course_type = @course_type,
+                          quantity = @quantity
+                      WHERE menuItemID = @id";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@id",
-                    orderItem.Item_id);
+                    orderItem.MenuItemID);
 
-                command.Parameters.AddWithValue("@dish_name",
-                    orderItem.Dish_name);
+                command.Parameters.AddWithValue("@description",
+                    orderItem.Description);
 
-                command.Parameters.AddWithValue("@detail",
-                    orderItem.Details);
-
-                command.Parameters.AddWithValue("@cost",
+                command.Parameters.AddWithValue("@price",
                     orderItem.Price);
 
-                command.Parameters.AddWithValue("@vat",
-                    orderItem.VAT);
+                command.Parameters.AddWithValue("@vat_category",
+                    orderItem.VatCategory);
 
-                command.Parameters.AddWithValue("@stock",
-                    orderItem.Stock);
+                command.Parameters.AddWithValue("@course_type",
+                    orderItem.CourseType);
 
-                command.Parameters.AddWithValue("@type",
-                    orderItem.Type);
+                command.Parameters.AddWithValue("@quantity",
+                    orderItem.Quantity);
 
                 connection.Open();
 
@@ -167,7 +175,8 @@ namespace WebApplication3.Repo.Folder_OrderItem
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    "DELETE FROM order_item WHERE item_id = @id";
+                    @"DELETE FROM MenuItem
+                      WHERE menuItemID = @id";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);
@@ -183,24 +192,13 @@ namespace WebApplication3.Repo.Folder_OrderItem
         private OrderItem ReadOrderItem(SqlDataReader reader)
         {
             return new OrderItem(
-                (int)reader["item_id"],
-                (string)reader["dish_name"],
-                (string)reader["detail"],
-                (decimal)reader["cost"],
-                (decimal)reader["vat"],
-                (int)reader["stock"],
-                (string)reader["type"]
+                (int)reader["menuItemID"],
+                (string)reader["description"],
+                (double)reader["price"],
+                (bool)reader["vat_category"],
+                (int)reader["course_type"],
+                (int)reader["quantity"]
             );
-        }
-
-        public void Create(OrderItem orderItem)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(OrderItem orderItem)
-        {
-            throw new NotImplementedException();
         }
     }
 }

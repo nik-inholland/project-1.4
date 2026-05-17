@@ -16,17 +16,12 @@ namespace WebApplication3.repo
             throw new NotImplementedException();
         }
 
-        public void Delete(OrderItem orderItem)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<OrderItem> GetAll()
         {
             List<OrderItem> activities = new List<OrderItem>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "SELECT item_id, dish_name, detail, cost, vat, stock, [type] FROM order_item ORDER BY dish_name;";
+                string query = "SELECT item_id, dish_name, detail, cost, vat, stock, [type] FROM MenuItem ORDER BY dish_name;";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -49,17 +44,21 @@ namespace WebApplication3.repo
             throw new NotImplementedException();
         }
 
-        public OrderItem ReadOrderItem(SqlDataReader reader)
+        private OrderItem ReadOrderItem(SqlDataReader reader)
         {
             return new OrderItem(
-                (int)reader["item_id"],
-                (string)reader["dish_name"],
-                (string)reader["detail"],
-                (decimal)reader["cost"],
-                (decimal)reader["vat"],
-                (int)reader["stock"],
-                (string)reader["type"]
+                (int)reader["menuItemID"],
+                (string)reader["description"],
+                (double)reader["price"],
+                (bool)reader["vat_category"],
+                (int)reader["course_type"],
+                (int)reader["quantity"]
             );
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

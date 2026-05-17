@@ -6,10 +6,12 @@ namespace WebApplication3.repo
     {
         List<OrderItem> GetAll();
 
-        OrderItem? GetById(int userid);
+        OrderItem? GetById(int id);
 
         void Create(OrderItem orderItem);
+
         void Update(OrderItem orderItem);
-        void Delete(OrderItem orderItem);
+
+        void Delete(int id);
     }
 }

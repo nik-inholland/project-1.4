@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
 using WebApplication3.repo;
-using WebApplication3.Repo.Folder_OrderItem;
 
 namespace WebApplication3.Controllers
 {
-    public class Order_item_managment : Controller
+    public class MenuItemController : Controller
     {
         private readonly Iorder_item_managment _repo;
 
-        public Order_item_managment(Iorder_item_managment repo)
+        public MenuItemController(Iorder_item_managment repo)
         {
             _repo = repo;
         }

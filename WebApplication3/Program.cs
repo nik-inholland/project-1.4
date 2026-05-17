@@ -1,4 +1,5 @@
 using WebApplication3.repo;
+using WebApplication3.Repo.Folder_OrderItem;
 
 namespace WebApplication3
 {
@@ -11,7 +12,7 @@ namespace WebApplication3
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddScoped<Iorder_item_managment, order_item_managment>();
+            builder.Services.AddScoped<Iorder_item_managment, DBOrderItemRepo>();
 
             var app = builder.Build();
 

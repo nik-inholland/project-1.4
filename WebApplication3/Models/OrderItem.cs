@@ -1,25 +1,37 @@
-﻿
-namespace WebApplication3.Models
+﻿namespace WebApplication3.Models
 {
-    public class OrderItem : IOrderItem
+    public class OrderItem
     {
-        public int Item_id { get; set; }
-        public string Dish_name { get; set; }
-        public string Details { get; set; }
-        public decimal Price { get; set; }
-        public decimal VAT { get; set; }
-        public int Stock { get; set; }
-        public string Type { get; set; }
+        public int MenuItemID { get; set; }
 
-        public OrderItem(int intem_id, string dish_name, string details, decimal price, decimal vat, int stock, string type)
+        public string Description { get; set; }
+
+        public double Price { get; set; }
+
+        public bool VatCategory { get; set; }
+
+        public int CourseType { get; set; }
+
+        public int Quantity { get; set; }
+
+        public OrderItem()
         {
-            Item_id = intem_id;
-            Dish_name = dish_name;
-            Details = details;
+        }
+
+        public OrderItem(
+            int menuItemID,
+            string description,
+            double price,
+            bool vatCategory,
+            int courseType,
+            int quantity)
+        {
+            MenuItemID = menuItemID;
+            Description = description;
             Price = price;
-            VAT = vat;
-            Stock = stock;
-            Type = type;
+            VatCategory = vatCategory;
+            CourseType = courseType;
+            Quantity = quantity;
         }
     }
 }
