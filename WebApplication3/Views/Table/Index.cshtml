@@ -1,0 +1,42 @@
+﻿@model List<WebApplication3.Models.RestaurantTable>
+
+<h2>Tables</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Table</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var table in Model)
+        {
+            <tr>
+                <td>@table.TableID</td>
+
+                <td>
+                    @table.Occupied
+                </td>
+
+                <td>
+                    <a asp-action="SetStatus"
+                       asp-route-id="@table.TableID"
+                       asp-route-status="Free">
+                        Free
+                    </a>
+
+                    |
+
+                    <a asp-action="SetStatus"
+                       asp-route-id="@table.TableID"
+                       asp-route-status="Occupied">
+                        Occupied
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

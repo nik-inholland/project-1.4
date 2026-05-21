@@ -1,5 +1,7 @@
 using WebApplication3.repo;
 using WebApplication3.Repo.Folder_OrderItem;
+using WebApplication3.Services;
+using WebApplication3.Services.Interfaces;
 
 namespace WebApplication3
 {
@@ -9,18 +11,29 @@ namespace WebApplication3
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+
+            builder.Services.AddScoped<IOrderService, OrderService>();
+
+            builder.Services.AddScoped<ITableRepository, TableRepository>();
+
+            builder.Services.AddScoped<ITableService, TableService>();
 
             builder.Services.AddScoped<Iorder_item_managment, DBOrderItemRepo>();
 
+            builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+
+            builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+            builder.Services.AddSession();
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -28,6 +41,8 @@ namespace WebApplication3
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseAuthorization();
 

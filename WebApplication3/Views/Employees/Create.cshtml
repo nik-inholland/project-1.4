@@ -1,0 +1,62 @@
+﻿@model WebApplication3.Models.Employee
+
+<h2>Create Employee</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">
+        @ViewBag.Error
+    </p>
+}
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label>Username</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="Password"
+               type="password"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>First Name</label>
+        <input asp-for="FirstName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input asp-for="LastName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Employee Type</label>
+
+        <select asp-for="EmployeeType"
+                class="form-control">
+
+            <option value="Admin">Admin</option>
+            <option value="Employee">Employee</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Date Of Birth</label>
+
+        <input asp-for="DateOfBirth"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Create Employee
+    </button>
+
+</form>
