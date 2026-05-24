@@ -1,0 +1,30 @@
+﻿@model List<WebApplication3.Models.OrderTable>
+
+<h2>Restaurant Overview</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.TableOrderID</td>
+                <td>@order.OrderStatus</td>
+                <td>@order.OrderDateTime</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@order.TableOrderID">
+                        View
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
