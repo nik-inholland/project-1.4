@@ -14,18 +14,15 @@ namespace WebApplication3
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-
             builder.Services.AddScoped<IOrderService, OrderService>();
-
             builder.Services.AddScoped<ITableRepository, TableRepository>();
-
             builder.Services.AddScoped<ITableService, TableService>();
-
             builder.Services.AddScoped<Iorder_item_managment, DBOrderItemRepo>();
-
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
-
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+            builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+            builder.Services.AddScoped<IMenuService, MenuService>();
 
             builder.Services.AddSession();
 
@@ -39,11 +36,8 @@ namespace WebApplication3
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseSession();
-
             app.UseAuthorization();
 
             app.MapControllerRoute(

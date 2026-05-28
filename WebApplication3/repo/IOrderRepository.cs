@@ -12,5 +12,9 @@ namespace WebApplication3.repo
         // UPDATE
         void UpdateOrderStatus(int orderId, int status);
         void UpdatePersonOrderStatus(int personOrderId, int status);
+
+        // === ADDED FOR STUDENT 2 - TAKING ORDER ===
+        int CreateOrder(int tableId, int employeeId);
+        void AddOrderItem(int orderId, OrderItem item);
     }
 }

@@ -1,8 +1,29 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Restaurant Chapeau - Home";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Restaurant Chapeau</h1>
+    <p class="lead">Professional Restaurant Management System</p>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <div class="list-group">
+            <a href="/Table/Index" class="list-group-item list-group-item-action">
+                <h5> Restaurant Overview</h5>
+                <p class="mb-0">View tables, seating status and orders</p>
+            </a>
+
+            <a href="/Order/TakeOrder?tableId=1" class="list-group-item list-group-item-action">
+                <h5> Take Order</h5>
+                <p class="mb-0">Start taking orders for a table</p>
+            </a>
+
+            <a href="/Menu" class="list-group-item list-group-item-action">
+                <h5> View Full Menu</h5>
+                <p class="mb-0">Browse all available items</p>
+            </a>
+        </div>
+    </div>
 </div>

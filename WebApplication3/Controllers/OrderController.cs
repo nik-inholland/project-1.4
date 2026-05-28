@@ -1,59 +1,55 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication3.helper;
 using WebApplication3.Models;
-using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
+using WebApplication3.helper;
 
 namespace WebApplication3.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IOrderService _service;
+        private readonly IMenuService _menuService;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IOrderService service)
+        public OrderController(IMenuService menuService, IOrderService orderService)
         {
-            _service = service;
+            _menuService = menuService;
+            _orderService = orderService;
         }
 
-        public IActionResult Index()
+        public IActionResult TakeOrder(int tableId)
         {
-            var role = RoleHelper.GetRole(HttpContext);
-
-            if (string.IsNullOrEmpty(role))
+            if (HttpContext.Session.GetString("Username") == null)
                 return RedirectToAction("Login", "Account");
 
-            var orders = _service.GetAllOrders();
-            return View(orders);
-        }
-        public IActionResult Details(int id)
-        {
-
-            if (!RoleHelper.CanEditOrders(HttpContext)) 
+            var vm = new TakeOrderViewModel
             {
-                return RedirectToAction("Index", "Home");
-            }
+                TableID = tableId,
+                MenuItems = _menuService.GetAllActive()
+            };
 
-            var order = _service.GetOrder(id);
-
-            if (order == null)
-                return NotFound();
-
-            return View(order);
+            return View(vm);
         }
 
         [HttpPost]
-        public IActionResult ChangeOrderStatus(int orderId, OrderStatus status)
+        public IActionResult SaveOrder(int tableId, List<CurrentOrderItem> currentOrder)
         {
+            int employeeId = HttpContext.Session.GetInt32("EmployeeID") ?? 0;
 
-            _service.ChangeOrderStatus(orderId, status);
-            return RedirectToAction("Details", new { id = orderId });
-        }
+            var orderItems = currentOrder.Select(x => new OrderItem
+            {
+                MenuItemID = x.MenuItemID,
+                Quantity = x.Quantity,
+                Comment = x.Comment
+            }).ToList();
 
-        [HttpPost]
-        public IActionResult ServePerson(int personOrderId, int orderId)
-        {
-            _service.MarkPersonAsServed(personOrderId);
-            return RedirectToAction("Details", new { id = orderId });
+            _orderService.CreateNewOrder(tableId, employeeId, orderItems);
+
+            // Decrease stock
+            foreach (var item in currentOrder)
+                _menuService.DecreaseStock(item.MenuItemID, item.Quantity);
+
+            TempData["Success"] = "Order saved successfully!";
+            return RedirectToAction("Index", "Table");
         }
     }
 }

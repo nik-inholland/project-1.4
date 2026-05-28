@@ -12,5 +12,6 @@ namespace WebApplication3.Services.Interfaces
         void ChangePersonOrderStatus(int personOrderId, OrderStatus status);
 
         void MarkPersonAsServed(int personOrderId);
+        void CreateNewOrder(int tableId, int employeeId, List<OrderItem> items);
     }
 }

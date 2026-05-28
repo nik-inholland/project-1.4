@@ -12,15 +12,13 @@ namespace WebApplication3.Services
         {
             _repo = repo;
         }
+
         public OrderTable GetOrder(int id)
         {
             var order = _repo.GetById(id);
-
             if (order == null)
                 return null;
-
             order.PersonOrders = _repo.GetPersonOrdersByTableId(id);
-
             return order;
         }
 
@@ -28,6 +26,7 @@ namespace WebApplication3.Services
         {
             return _repo.GetAll();
         }
+
         public void ChangeOrderStatus(int orderId, OrderStatus status)
         {
             _repo.UpdateOrderStatus(orderId, (int)status);
@@ -37,32 +36,37 @@ namespace WebApplication3.Services
         {
             _repo.UpdatePersonOrderStatus(personOrderId, (int)status);
         }
+
         public void MarkPersonAsServed(int personOrderId)
         {
             var orders = _repo.GetAll();
-
             PersonOrder target = null;
-
             foreach (var order in orders)
             {
                 var persons = _repo.GetPersonOrdersByTableId(order.TableOrderID);
-
                 target = persons.FirstOrDefault(p => p.PersonOrderID == personOrderId);
-
                 if (target != null)
                     break;
             }
-
             if (target == null)
                 return;
-
             if (target.OrderStatus != OrderStatus.ReadyToBeServed)
                 return;
-
             _repo.UpdatePersonOrderStatus(
                 personOrderId,
                 (int)OrderStatus.Served
             );
+        }
+
+        // === ADDED FOR STUDENT 2 - TAKING ORDER ===
+        public void CreateNewOrder(int tableId, int employeeId, List<OrderItem> items)
+        {
+            int orderId = _repo.CreateOrder(tableId, employeeId);
+
+            foreach (var item in items)
+            {
+                _repo.AddOrderItem(orderId, item);
+            }
         }
     }
 }

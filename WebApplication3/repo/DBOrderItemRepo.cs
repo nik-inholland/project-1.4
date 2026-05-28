@@ -194,7 +194,7 @@ namespace WebApplication3.Repo.Folder_OrderItem
             return new OrderItem(
                 (int)reader["menuItemID"],
                 (string)reader["description"],
-                (double)reader["price"],
+                (decimal)reader["price"],
                 (bool)reader["vat_category"],
                 (int)reader["course_type"],
                 (int)reader["quantity"]
