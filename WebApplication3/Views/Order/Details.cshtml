@@ -1,0 +1,65 @@
+﻿@model WebApplication3.Models.OrderTable
+
+<h2>Order @Model.TableOrderID</h2>
+
+<p><b>Status:</b> @Model.OrderStatus</p>
+
+<!-- =========================
+     CHANGE ORDER STATUS
+========================= -->
+<form asp-action="ChangeOrderStatus" method="post">
+    <input type="hidden" name="orderId" value="@Model.TableOrderID" />
+
+    <select name="status">
+        <option value="Ordered">Ordered</option>
+        <option value="BeingPrepared">BeingPrepared</option>
+        <option value="ReadyToBeServed">ReadyToBeServed</option>
+        <option value="Served">Served</option>
+    </select>
+
+    <button type="submit">Update Order</button>
+</form>
+
+<hr />
+
+<h3>Person Orders</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var p in Model.PersonOrders)
+        {
+            <tr>
+                <td>@p.PersonName</td>
+                <td>@p.OrderStatus</td>
+                <td>@p.TotalPrice</td>
+                <td>
+
+                    @* Sprint 3 rule: only “Serve” button *@
+                    <form asp-action="ServePerson" method="post">
+                        <input type="hidden" name="personOrderId" value="@p.PersonOrderID" />
+                        <input type="hidden" name="orderId" value="@Model.TableOrderID" />
+
+                        @if (p.OrderStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                        {
+                            <button type="submit">Mark as Served</button>
+                        }
+                        else
+                        {
+                            <span>-</span>
+                        }
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

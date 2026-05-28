@@ -1,0 +1,80 @@
+﻿@model WebApplication3.Models.TakeOrderViewModel
+@{
+    ViewData["Title"] = "Take Order - Table " + Model.TableID;
+}
+
+<h2>Take Order for Table @Model.TableID</h2>
+
+@if (TempData["Success"] != null)
+{
+<div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<!-- Filters -->
+<div class="row mb-3">
+    <div class="col-md-3">
+        <label>Card Type</label>
+        <select asp-for="FilterCardType" class="form-control" onchange="this.form.submit()">
+            <option value="All">All</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Diner">Diner</option>
+            <option value="Drinks">Drinks</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label>Category</label>
+        <select asp-for="FilterCategory" class="form-control" onchange="this.form.submit()">
+            <option value="All">All</option>
+            <option value="Starters">Starters</option>
+            <option value="Mains">Mains</option>
+            <option value="Desserts">Desserts</option>
+        </select>
+    </div>
+</div>
+
+<!-- Menu Items -->
+<h4>Menu Items</h4>
+<div class="row">
+    @foreach (var item in Model.MenuItems)
+    {
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5>@item.Name - €@item.Price</h5>
+                <p><strong>@item.CardType</strong> - @item.Category</p>
+
+                @if (item.IsOutOfStock)
+                    {
+                <span class="badge bg-danger">Out of Stock</span>
+                    }
+                    else if (item.IsAlmostOutOfStock)
+                    {
+                <span class="badge bg-warning">Almost Out (@item.Stock)</span>
+                    }
+                    else
+                    {
+                <span class="badge bg-success">@item.Stock in stock</span>
+                    }
+
+                <form asp-action="AddToOrder" method="post" class="mt-2">
+                    <input type="hidden" name="tableId" value="@Model.TableID" />
+                    <input type="hidden" name="menuItemId" value="@item.MenuItemID" />
+                    <button type="submit" class="btn btn-primary btn-sm"
+                            @(item.IsOutOfStock ? "disabled" : "")>
+                        Add to Order
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- Current Order -->
+<h4 class="mt-4">Current Order</h4>
+<!-- Add table showing current items with quantity, comment, remove buttons -->
+
+<form asp-action="SaveOrder" method="post">
+    <input type="hidden" name="tableId" value="@Model.TableID" />
+    <button type="submit" class="btn btn-success">Save Order</button>
+</form>
