@@ -22,7 +22,10 @@ namespace WebApplication3.Controllers
             if (string.IsNullOrEmpty(role))
                 return RedirectToAction("Login", "Account");
 
-            var orders = _service.GetAllOrders();
+            var orders = _service.GetAllOrders()
+                                 .OrderBy(o => o.TableOrderID)
+                                 .ToList();
+
             return View(orders);
         }
         public IActionResult Details(int id)

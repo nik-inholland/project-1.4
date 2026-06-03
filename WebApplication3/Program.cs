@@ -31,6 +31,8 @@ namespace WebApplication3
 
             var app = builder.Build();
 
+            app.UseStaticFiles();
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

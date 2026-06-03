@@ -1,30 +1,99 @@
 ﻿@model List<WebApplication3.Models.OrderTable>
 
-<h2>Restaurant Overview</h2>
+@using WebApplication3.Models
 
-<table>
-    <thead>
-        <tr>
-            <th>Order ID</th>
-            <th>Status</th>
-            <th>Time</th>
-            <th></th>
-        </tr>
-    </thead>
+<h2>Restaurant Orders</h2>
 
-    <tbody>
-        @foreach (var order in Model)
+<div class="order-grid">
+
+    @foreach (var order in Model.OrderBy(o => o.TableOrderID))
+    {
+        string statusClass = order.OrderStatus switch
         {
-            <tr>
-                <td>@order.TableOrderID</td>
-                <td>@order.OrderStatus</td>
-                <td>@order.OrderDateTime</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@order.TableOrderID">
-                        View
-                    </a>
-                </td>
-            </tr>
+            OrderStatus.Ordered => "ordered",
+            OrderStatus.BeingPrepared => "preparing",
+            OrderStatus.ReadyToBeServed => "ready",
+            OrderStatus.Served => "served",
+            _ => ""
+        };
+
+        <a asp-action="Details"
+           asp-route-id="@order.TableOrderID"
+           class="order-card @statusClass">
+
+            <div class="order-text">
+                <h3>Table @order.TableOrderID</h3>
+
+                <p>
+                    Status:
+                    <strong>@order.OrderStatus</strong>
+                </p>
+
+                <p>
+                    Time:
+                    @order.OrderDateTime.ToString("HH:mm")
+                </p>
+
+                <p>
+                    People:
+                    @order.PersonOrders.Count
+                </p>
+            </div>
+
+        </a>
+    }
+
+</div>
+
+<style>
+    .order-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .order-card {
+        width: 220px;
+        text-decoration: none;
+        color: black;
+        border: 3px solid #ccc;
+        border-radius: 12px;
+        padding: 20px;
+        background: white;
+        transition: 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+        .order-card:hover {
+            transform: scale(1.03);
         }
-    </tbody>
-</table>
+
+    .order-text {
+        text-align: center;
+    }
+
+    /* Status colors */
+    .ordered {
+        border-color: gray;
+    }
+
+    .preparing {
+        border-color: orange;
+    }
+
+    .ready {
+        border-color: limegreen;
+        background-color: #f1fff1;
+    }
+
+    .served {
+        border-color: dodgerblue;
+        opacity: 0.8;
+    }
+
+    .ready:hover {
+        box-shadow: 0 0 15px rgba(50,205,50,0.4);
+    }
+</style>

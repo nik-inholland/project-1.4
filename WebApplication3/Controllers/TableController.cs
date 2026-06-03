@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication3.helper;
 using WebApplication3.Models;
 using WebApplication3.Services.Interfaces;
 
@@ -13,28 +12,24 @@ namespace WebApplication3.Controllers
         {
             _repository = repository;
         }
+
         public IActionResult Index()
         {
-            var role = RoleHelper.GetRole(HttpContext);
-
-            if (string.IsNullOrEmpty(role))
-                return RedirectToAction("Login", "Account");
-
             var tables = _repository.GetAll();
             return View(tables);
         }
 
-        public IActionResult SetStatus(int id, TableStatus status)
+        public IActionResult ToggleStatus(int id)
         {
-            var role = RoleHelper.GetRole(HttpContext);
-
-
-            RestaurantTable? table = _repository.GetById(id);
+            var table = _repository.GetById(id);
 
             if (table == null)
                 return NotFound();
 
-            table.Occupied = status;
+            table.Occupied =
+                table.Occupied == TableStatus.Free
+                ? TableStatus.Occupied
+                : TableStatus.Free;
 
             _repository.Update(table);
 
