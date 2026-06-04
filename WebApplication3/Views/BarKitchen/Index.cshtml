@@ -1,0 +1,335 @@
+﻿@model List<WebApplication3.Models.OrderTable>
+
+@{
+    ViewData["Title"] = "Bar / Kitchen Orders";
+
+    bool isFinishedMode =
+        ViewBag.Mode != null
+        && ViewBag.Mode.ToString() == "Finished";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2>Bar / Kitchen Orders</h2>
+
+        @if (isFinishedMode)
+        {
+            <p class="text-muted">
+                Finished orders of today
+            </p>
+        }
+        else
+        {
+            <p class="text-muted">
+                Running orders with ordered items
+            </p>
+        }
+    </div>
+
+    <a class="btn btn-primary"
+       asp-controller="BarKitchen"
+       asp-action="Index">
+        Refresh
+    </a>
+</div>
+
+<div class="mb-3">
+    <a class="btn btn-outline-primary"
+       asp-controller="BarKitchen"
+       asp-action="Index">
+        Running Orders
+    </a>
+
+    <a class="btn btn-outline-success"
+       asp-controller="BarKitchen"
+       asp-action="Finished">
+        Finished Today
+    </a>
+</div>
+
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-success">
+        No orders found.
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var order in Model)
+        {
+            var groups = new[]
+            {
+        new { Name = "Starters", CourseType = 1, Items = order.Starters },
+        new { Name = "Mains", CourseType = 2, Items = order.Mains },
+        new { Name = "Desserts", CourseType = 3, Items = order.Desserts },
+        new { Name = "Drinks", CourseType = 0, Items = order.Drinks }
+        };
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+
+                    <div class="card-header bg-dark text-white">
+                        <strong>Table @order.TableID</strong>
+                    </div>
+
+                    <div class="card-body">
+                        <p>
+                            <strong>Order Time:</strong>
+                            @order.OrderDateTime.ToString("HH:mm")
+                        </p>
+
+                        <p>
+                            <strong>Waiting Time:</strong>
+                            @order.WaitingTimeText
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            <span class="order-status-text">
+                                @order.OrderStatus
+                            </span>
+                        </p>
+
+                        @if (!isFinishedMode)
+                        {
+                            <div class="mb-3">
+                                @if (order.OrderStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                {
+                                    <button type="button"
+                                            class="btn btn-sm btn-warning order-start-btn">
+                                        Start Preparing Order
+                                    </button>
+                                }
+
+                                @if (order.OrderStatus == WebApplication3.Models.OrderStatus.BeingPrepared
+                                                    || order.OrderStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                                {
+                                    <button type="button"
+                                            class="btn btn-sm btn-success order-ready-btn">
+                                        Mark Order Ready
+                                    </button>
+                                }
+                            </div>
+                        }
+
+                        <hr />
+
+                        @foreach (var group in groups)
+                        {
+                            if (group.Items.Any())
+                            {
+                                <div class="course-block mb-3">
+                                    <h6>@group.Name</h6>
+
+                                    @if (!isFinishedMode && group.Name != "Drinks")
+                                    {
+                                        <div class="mb-2">
+                                            <button type="button"
+                                                    class="btn btn-sm btn-outline-warning course-start-btn">
+                                                Start @group.Name
+                                            </button>
+
+                                            <button type="button"
+                                                    class="btn btn-sm btn-outline-success course-ready-btn">
+                                                @group.Name Ready
+                                            </button>
+                                        </div>
+                                    }
+
+                                    <ul>
+                                        @foreach (var item in group.Items)
+                                        {
+                                            <li class="mb-2">
+                                                @item.Quantity x @item.Description
+
+                                                @if (!string.IsNullOrEmpty(item.Comment))
+                                                {
+                                                    <span class="text-muted">
+                                                        (@item.Comment)
+                                                    </span>
+                                                }
+
+                                                <br />
+
+                                                <small class="text-muted">
+                                                    Status:
+                                                    <span class="item-status-text">
+                                                        @item.StatusText
+                                                    </span>
+                                                </small>
+
+                                                @if (!isFinishedMode)
+                                                {
+                                                    <div class="mt-1">
+                                                        @if (item.ItemStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                                        {
+                                                            <button type="button"
+                                                                    class="btn btn-sm btn-outline-warning start-btn">
+                                                                Start
+                                                            </button>
+                                                        }
+
+                                                        @if (item.ItemStatus == WebApplication3.Models.OrderStatus.BeingPrepared
+                                                                                        || item.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                                                        {
+                                                            <button type="button"
+                                                                    class="btn btn-sm btn-outline-success ready-btn">
+                                                                Ready
+                                                            </button>
+                                                        }
+                                                    </div>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@if (!isFinishedMode)
+{
+    <script>
+        function changeButton(button, text, removeClass, addClass) {
+            button.innerText = text;
+            button.classList.remove(removeClass);
+            button.classList.add(addClass);
+        }
+
+        function markItemPreparing(item) {
+            const startButton = item.querySelector(".start-btn");
+            const statusText = item.querySelector(".item-status-text");
+
+            if (startButton) {
+                changeButton(startButton, "Preparing", "btn-outline-warning", "btn-warning");
+            }
+
+            if (statusText) {
+                statusText.innerText = "Being Prepared";
+            }
+        }
+
+        function markItemServedByButton(button) {
+            changeButton(button, "Served", "btn-outline-success", "btn-success");
+
+            const item = button.closest("li");
+            const statusText = item.querySelector(".item-status-text");
+
+            if (statusText) {
+                statusText.innerText = "Served";
+            }
+        }
+
+        function markItemServed(item) {
+            const readyButton = item.querySelector(".ready-btn");
+            const statusText = item.querySelector(".item-status-text");
+
+            if (readyButton) {
+                changeButton(readyButton, "Served", "btn-outline-success", "btn-success");
+            }
+
+            if (statusText) {
+                statusText.innerText = "Served";
+            }
+        }
+
+        function markOrder(card) {
+            const button = card.querySelector(".order-ready-btn");
+            const status = card.querySelector(".order-status-text");
+
+            if (button) {
+                changeButton(button, "Marked", "btn-success", "btn-dark");
+            }
+
+            if (status) {
+                status.innerText = "Marked";
+            }
+        }
+
+        function checkIfAllItemsServed(card) {
+            const readyButtons = card.querySelectorAll(".ready-btn");
+
+            if (readyButtons.length === 0) {
+                return;
+            }
+
+            const allServed = Array.from(readyButtons)
+                .every(button => button.innerText === "Served");
+
+            if (allServed) {
+                markOrder(card);
+            }
+        }
+
+        document.querySelectorAll(".start-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const item = this.closest("li");
+                markItemPreparing(item);
+            });
+        });
+
+        document.querySelectorAll(".ready-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                markItemServedByButton(this);
+
+                const card = this.closest(".card");
+                checkIfAllItemsServed(card);
+            });
+        });
+
+        document.querySelectorAll(".order-start-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                changeButton(this, "Preparing", "btn-warning", "btn-dark");
+
+                const card = this.closest(".card");
+                card.querySelector(".order-status-text").innerText = "Being Prepared";
+            });
+        });
+
+        document.querySelectorAll(".order-ready-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const card = this.closest(".card");
+
+                card.querySelectorAll("li").forEach(item => {
+                    markItemServed(item);
+                });
+
+                markOrder(card);
+            });
+        });
+
+        document.querySelectorAll(".course-start-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const course = this.closest(".course-block");
+
+                course.querySelectorAll("li").forEach(item => {
+                    markItemPreparing(item);
+                });
+
+                changeButton(this, "Preparing", "btn-outline-warning", "btn-warning");
+            });
+        });
+
+        document.querySelectorAll(".course-ready-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const course = this.closest(".course-block");
+
+                course.querySelectorAll("li").forEach(item => {
+                    markItemServed(item);
+                });
+
+                changeButton(this, "Course Ready", "btn-outline-success", "btn-success");
+
+                const card = this.closest(".card");
+                checkIfAllItemsServed(card);
+            });
+        });
+    </script>
+}
