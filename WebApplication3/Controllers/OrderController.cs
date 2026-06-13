@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication3.helper;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
 using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
@@ -15,12 +15,9 @@ namespace WebApplication3.Controllers
             _service = service;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
-            var role = RoleHelper.GetRole(HttpContext);
-
-            if (string.IsNullOrEmpty(role))
-                return RedirectToAction("Login", "Account");
 
             var orders = _service.GetAllOrders()
                                  .OrderBy(o => o.TableOrderID)
@@ -28,13 +25,10 @@ namespace WebApplication3.Controllers
 
             return View(orders);
         }
+
+        [Authorize(Roles = "admin, waiter, kitchenstaff, barstaff")]
         public IActionResult Details(int id)
         {
-
-            if (!RoleHelper.CanEditOrders(HttpContext)) 
-            {
-                return RedirectToAction("Index", "Home");
-            }
 
             var order = _service.GetOrder(id);
 
@@ -44,19 +38,29 @@ namespace WebApplication3.Controllers
             return View(order);
         }
 
+        [Authorize(Roles = "admin, waiter, chef, barstaff")]
         [HttpPost]
-        public IActionResult ChangeOrderStatus(int orderId, OrderStatus status)
+        public IActionResult ChangeOrderStatus(OrderTable order)
         {
 
-            _service.ChangeOrderStatus(orderId, status);
-            return RedirectToAction("Details", new { id = orderId });
+            _service.ChangeOrderStatus(order);
+            return RedirectToAction("Details", new { id = order.TableOrderID });
         }
 
+        [Authorize(Roles = "admin, waiter, kitchenstaff, barstaff")]
         [HttpPost]
-        public IActionResult ServePerson(int personOrderId, int orderId)
+        public IActionResult ChangePersonOrderStatus(PersonOrder personOrder)
         {
-            _service.MarkPersonAsServed(personOrderId);
-            return RedirectToAction("Details", new { id = orderId });
+            _service.ChangePersonOrderStatus(personOrder);
+            return RedirectToAction("Details", new { id = personOrder.TableOrderID });
+        }
+
+        [Authorize(Roles = "admin, waiter, chef, barstaff")]
+        [HttpPost]
+        public IActionResult ServePerson(PersonOrder personOrder)
+        {
+            _service.MarkPersonAsServed(personOrder);
+            return RedirectToAction("Details", new { id = personOrder.TableOrderID });
         }
     }
 }

@@ -1,6 +1,7 @@
-﻿@using WebApplication3.helper
+﻿@using System.Security.Claims  @* optional, but helps with FindFirst *@
 @{
-    var role = RoleHelper.GetRole(Context);
+    var isAuthenticated = User.Identity?.IsAuthenticated ?? false;
+    var userRole = User.FindFirst(ClaimTypes.Role)?.Value ?? string.Empty;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +18,8 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication3</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -32,71 +33,44 @@
                     </ul>
 
                     <ul class="navbar-nav flex-grow-1">
-
-
-                        @if (!string.IsNullOrEmpty(role))
+                        @if (isAuthenticated)
                         {
-                            @* ALL LOGGED IN USERS *@
+                            @* These links are visible to ALL logged-in users *@
                             <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                   asp-controller="Order"
-                                   asp-action="Index">
-                                    Orders
-                                </a>
+                                <a class="nav-link text-dark" asp-controller="Order" asp-action="Index">Orders</a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                   asp-controller="Table"
-                                   asp-action="Index">
-                                    Tables
-                                </a>
+                                <a class="nav-link text-dark" asp-controller="Table" asp-action="Index">Tables</a>
                             </li>
                         }
 
-                        @* OPTIONAL: admin-only link *@
-                        @if (role == "admin" || role == "manager")
+                        @* Only managers and chefs see admin links *@
+                        @if (User.IsInRole("manager") || User.IsInRole("admin") || User.IsInRole("chef"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                   asp-controller="Employees"
-                                   asp-action="Create">
-                                    Add employee
-                                </a>
+                                <a class="nav-link text-dark" asp-controller="Employees" asp-action="Create">Add employee</a>
                             </li>
                         }
-
                     </ul>
 
                     <ul class="navbar-nav">
-
-                        @if (Context.Session.GetString("Username") != null)
+                        @if (isAuthenticated)
                         {
                             <li class="nav-item">
                                 <span class="nav-link text-dark">
-                                    Hello @Context.Session.GetString("Username")
+                                    Hello @User.Identity.Name
                                 </span>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-danger"
-                                   asp-controller="Account"
-                                   asp-action="Logout">
-                                    Logout
-                                </a>
+                                <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-primary"
-                                   asp-controller="Account"
-                                   asp-action="Login">
-                                    Login
-                                </a>
+                                <a class="nav-link text-primary" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
                         }
-
                     </ul>
                 </div>
             </div>

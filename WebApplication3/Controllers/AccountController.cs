@@ -1,20 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography;
-using System.Text;
-using WebApplication3.Helpers;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebApplication3.Models;
-using WebApplication3.repo;
 using WebApplication3.Services.Interfaces;
 
 namespace WebApplication3.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IEmployeeService _repository;
+        private readonly IEmployeeService _employeeService;
 
-        public AccountController(IEmployeeService repository)
+        public AccountController(IEmployeeService employeeService)
         {
-            _repository = repository;
+            _employeeService = employeeService;
         }
 
         [HttpGet]
@@ -27,48 +26,44 @@ namespace WebApplication3.Controllers
         public IActionResult Login(LoginModel model)
         {
             if (!ModelState.IsValid)
+                return View(model);
+
+            Employee? employee = _employeeService.GetByLoginCredentials(
+                model.Username, model.Password);
+
+            if (employee is null)
             {
+                ViewBag.Error = "Invalid username or password";
                 return View(model);
             }
 
-            string hashedPassword =
-                PasswordHelper.HashPassword(model.Password);
+            SignInUser(employee);
 
-            Employee? employee =
-                _repository.GetByLoginCredentials(
-                    model.Username,
-                    hashedPassword);
+            HttpContext.Session.SetString("Username", employee.Username);
+            HttpContext.Session.SetInt32("EmployeeID", employee.EmployeeID);
 
-            if (employee == null)
-            {
-                ViewBag.Error =
-                    "Invalid username or password";
-
-                return View(model);
-            }
-
-            HttpContext.Session.SetString(
-                "Username",
-                employee.Username);
-
-            HttpContext.Session.SetInt32(
-                "EmployeeID",
-                employee.EmployeeID);
-
-            HttpContext.Session.SetString(
-                "EmployeeType",
-                employee.EmployeeType.Trim().ToLower()
-            );
-
-            return RedirectToAction(
-                "Index",
-                "Home");
+            return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Logout()
+        private async void SignInUser(Employee employee)
         {
-            HttpContext.Session.Clear();
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, employee.EmployeeID.ToString()),
+                new Claim(ClaimTypes.Name, employee.Username),
+                new Claim(ClaimTypes.Role, employee.EmployeeType.Trim().ToLower()) 
+            };
 
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(principal);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
     }

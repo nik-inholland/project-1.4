@@ -10,7 +10,7 @@ namespace WebApplication3.repo
         public UsersRepository(IConfiguration configuration)
         {
             _connectionString =
-                configuration.GetConnectionString("DefaultConnection");
+                configuration.GetConnectionString("ChapeauConnection");
         }
 
         public List<Employee> GetAll()
@@ -21,14 +21,7 @@ namespace WebApplication3.repo
                    new SqlConnection(_connectionString))
             {
                 string query =
-                    @"SELECT employeeID,
-                             employeeType,
-                             firstName,
-                             lastName,
-                             dateOfBirth,
-                             password,
-                             Username
-                      FROM Employee";
+                    @"SELECT employeeID, employeeType, firstName, lastName, dateOfBirth, password, Username FROM Employee";
 
                 SqlCommand command =
                     new SqlCommand(query, connection);

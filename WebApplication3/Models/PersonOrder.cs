@@ -9,4 +9,5 @@ public class PersonOrder
     public int PaymentID { get; set; }
     public OrderStatus OrderStatus { get; set; }
     public DateTime CreatedAt { get; set; }
+    public List<OrderItem> OrderItems { get; set; } = new();
 }

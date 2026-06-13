@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
 using WebApplication3.repo;
 using WebApplication3.Services.Interfaces;
@@ -14,6 +15,7 @@ namespace WebApplication3.Controllers
             _repository = repository;
         }
 
+        [Authorize(Roles = "admin, manager")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -27,6 +29,7 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin, manager")]
         [HttpPost]
         public IActionResult Create(Employee employee)
         {

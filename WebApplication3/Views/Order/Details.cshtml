@@ -1,65 +1,96 @@
 ﻿@model WebApplication3.Models.OrderTable
+@using WebApplication3.Models
 
-<h2>Order @Model.TableOrderID</h2>
+<h2>Order – Table @Model.TableOrderID</h2>
 
-<p><b>Status:</b> @Model.OrderStatus</p>
+<p>Current status: <strong>@Model.OrderStatus</strong></p>
+<p>Created: @Model.CreatedAt.ToString("HH:mm")</p>
+<p>Parts: @Model.PersonOrders.Count</p>
 
-<!-- =========================
-     CHANGE ORDER STATUS
-========================= -->
+<hr />
+
+<h4>Change Order Status</h4>
 <form asp-action="ChangeOrderStatus" method="post">
-    <input type="hidden" name="orderId" value="@Model.TableOrderID" />
-
-    <select name="status">
-        <option value="Ordered">Ordered</option>
-        <option value="BeingPrepared">BeingPrepared</option>
-        <option value="ReadyToBeServed">ReadyToBeServed</option>
-        <option value="Served">Served</option>
+    <input type="hidden" asp-for="TableOrderID" />
+    <select name="OrderStatus">
+        <option value="@((int)OrderStatus.Ordered)" selected="@(Model.OrderStatus == OrderStatus.Ordered)">Ordered</option>
+        <option value="@((int)OrderStatus.BeingPrepared)" selected="@(Model.OrderStatus == OrderStatus.BeingPrepared)">Being Prepared</option>
+        <option value="@((int)OrderStatus.ReadyToBeServed)" selected="@(Model.OrderStatus == OrderStatus.ReadyToBeServed)">Ready to Serve</option>
+        <option value="@((int)OrderStatus.Served)" selected="@(Model.OrderStatus == OrderStatus.Served)">Served</option>
     </select>
-
-    <button type="submit">Update Order</button>
+    <button type="submit" class="btn btn-sm btn-primary">Update Order</button>
 </form>
 
 <hr />
 
-<h3>Person Orders</h3>
+<h4>Parts of Order</h4>
+<form asp-action="ChangePersonOrderStatus" method="post" style="margin-bottom:8px;">
+    <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var p in Model.PersonOrders)
+    <label>Part:</label>
+    <select name="PersonOrderID" id="personSelect">
+        @foreach (var part in Model.PersonOrders)
         {
-            <tr>
-                <td>@p.PersonName</td>
-                <td>@p.OrderStatus</td>
-                <td>@p.TotalPrice</td>
-                <td>
-
-                    @* Sprint 3 rule: only “Serve” button *@
-                    <form asp-action="ServePerson" method="post">
-                        <input type="hidden" name="personOrderId" value="@p.PersonOrderID" />
-                        <input type="hidden" name="orderId" value="@Model.TableOrderID" />
-
-                        @if (p.OrderStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
-                        {
-                            <button type="submit">Mark as Served</button>
-                        }
-                        else
-                        {
-                            <span>-</span>
-                        }
-                    </form>
-
-                </td>
-            </tr>
+            <option value="@part.PersonOrderID">
+                @part.PersonName (@part.OrderStatus)
+            </option>
         }
-    </tbody>
-</table>
+    </select>
+
+    <label>New status:</label>
+    <select name="OrderStatus">
+        <option value="@((int)OrderStatus.Ordered)">Ordered</option>
+        <option value="@((int)OrderStatus.BeingPrepared)">Being Prepared</option>
+        <option value="@((int)OrderStatus.ReadyToBeServed)">Ready to Serve</option>
+        <option value="@((int)OrderStatus.Served)">Served</option>
+    </select>
+
+    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+</form>
+
+<div id="itemsContainer" style="margin-top:15px;">
+    @foreach (var part in Model.PersonOrders)
+    {
+        <div class="person-items" id="items-@part.PersonOrderID" style="display:none;">
+            <h5>@part.PersonName's items:</h5>
+            @if (part.OrderItems.Any())
+            {
+                <ul>
+                    @foreach (var item in part.OrderItems)
+                    {
+                        <li>
+                            @item.Name – @item.Quantity× –
+                            €@item.Price.ToString("F2") –
+                            @item.Category
+                            @if (!string.IsNullOrEmpty(item.Comments))
+                            {
+                                <br />
+                
+                                <small>Note: @item.Comments</small>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No items yet.</p>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function showItemsForSelectedPerson() {
+            var selectedId = document.getElementById('personSelect').value;
+            document.querySelectorAll('.person-items').forEach(el => el.style.display = 'none');
+            var el = document.getElementById('items-' + selectedId);
+            if (el) el.style.display = 'block';
+        }
+
+        showItemsForSelectedPerson();
+
+        document.getElementById('personSelect').addEventListener('change', showItemsForSelectedPerson);
+    </script>
+}

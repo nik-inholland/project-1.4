@@ -1,11 +1,9 @@
 ﻿@model List<WebApplication3.Models.OrderTable>
-
 @using WebApplication3.Models
 
 <h2>Restaurant Orders</h2>
 
 <div class="order-grid">
-
     @foreach (var order in Model.OrderBy(o => o.TableOrderID))
     {
         string statusClass = order.OrderStatus switch
@@ -20,29 +18,14 @@
         <a asp-action="Details"
            asp-route-id="@order.TableOrderID"
            class="order-card @statusClass">
-
             <div class="order-text">
                 <h3>Table @order.TableOrderID</h3>
-
-                <p>
-                    Status:
-                    <strong>@order.OrderStatus</strong>
-                </p>
-
-                <p>
-                    Time:
-                    @order.OrderDateTime.ToString("HH:mm")
-                </p>
-
-                <p>
-                    People:
-                    @order.PersonOrders.Count
-                </p>
+                <p>Status: <strong>@order.OrderStatus</strong></p>
+                <p>Time: @order.CreatedAt.ToString("HH:mm")</p>
+                <p>People: @order.PersonOrders.Count</p>
             </div>
-
         </a>
     }
-
 </div>
 
 <style>
@@ -74,7 +57,6 @@
         text-align: center;
     }
 
-    /* Status colors */
     .ordered {
         border-color: gray;
     }

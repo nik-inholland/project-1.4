@@ -10,7 +10,7 @@ namespace WebApplication3.repo
         public TableRepository(IConfiguration configuration)
         {
             _connectionString =
-                configuration.GetConnectionString("DefaultConnection");
+                configuration.GetConnectionString("ChapeauConnection");
         }
 
         public List<RestaurantTable> GetAll()

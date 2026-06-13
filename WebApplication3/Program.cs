@@ -1,5 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using WebApplication3.repo;
-using WebApplication3.Repo.Folder_OrderItem;
 using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
 
@@ -13,25 +13,33 @@ namespace WebApplication3
 
             builder.Services.AddControllersWithViews();
 
+            // --- Repositories ---
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-
-            builder.Services.AddScoped<IOrderService, OrderService>();
-
             builder.Services.AddScoped<ITableRepository, TableRepository>();
-
-            builder.Services.AddScoped<ITableService, TableService>();
-
-            builder.Services.AddScoped<Iorder_item_managment, DBOrderItemRepo>();
-
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
+            // --- Services ---
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+            builder.Services.AddScoped<ITableService, TableService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
-            builder.Services.AddSession();
+            // --- Authentication (Cookie) ---
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(options =>
+                    {
+                        options.LoginPath = "/Account/Login";
+                        options.AccessDeniedPath = "/Account/";
+                        options.ExpireTimeSpan = TimeSpan.FromHours(2);
+                    });
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
             var app = builder.Build();
-
-            app.UseStaticFiles();
 
             if (!app.Environment.IsDevelopment())
             {
@@ -45,7 +53,7 @@ namespace WebApplication3
             app.UseRouting();
 
             app.UseSession();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

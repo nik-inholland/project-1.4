@@ -1,4 +1,5 @@
-﻿using WebApplication3.Models;
+﻿using WebApplication3.Helpers;
+using WebApplication3.Models;
 using WebApplication3.repo;
 using WebApplication3.Services.Interfaces;
 
@@ -14,30 +15,22 @@ namespace WebApplication3.Services
         {
             _usersRepository = usersRepository;
         }
-        public List<Employee> GetAll()
-        {
-            return _usersRepository.GetAll();
-        }
-        public Employee? GetById(int userId)
-        {
-            return _usersRepository.GetById(userId);
-        }
+        public List<Employee> GetAll() => _usersRepository.GetAll();
+        public Employee? GetById(int userId) => _usersRepository.GetById(userId);
+        public void Update(Employee user) => _usersRepository.Update(user);
+        public void Delete(Employee user) => _usersRepository.Delete(user);
+
         public void Create(Employee user)
         {
+            user.Password = PasswordHelper.HashPassword(user.Password);
             _usersRepository.Create(user);
         }
-        public void Update(Employee user)
-        {
-            _usersRepository.Update(user);
-        }
-        public void Delete(Employee user)
-        {
-            _usersRepository.Delete(user);
-        }
 
-        public Employee? GetByLoginCredentials(string userName, string password)
+        public Employee? GetByLoginCredentials(string userName, string plainPassword)
         {
-            return _usersRepository.GetByLoginCredentials(userName, password);
+            string hashed = PasswordHelper.HashPassword(plainPassword);
+
+            return _usersRepository.GetByLoginCredentials(userName, hashed);
         }
 
         public bool UsernameExists(string Username)

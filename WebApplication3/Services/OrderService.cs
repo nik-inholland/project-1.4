@@ -21,48 +21,62 @@ namespace WebApplication3.Services
 
             order.PersonOrders = _repo.GetPersonOrdersByTableId(id);
 
+            foreach (var person in order.PersonOrders)
+            {
+                person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+            }
+
             return order;
         }
 
         public List<OrderTable> GetAllOrders()
         {
-            return _repo.GetAll();
-        }
-        public void ChangeOrderStatus(int orderId, OrderStatus status)
-        {
-            _repo.UpdateOrderStatus(orderId, (int)status);
-        }
-
-        public void ChangePersonOrderStatus(int personOrderId, OrderStatus status)
-        {
-            _repo.UpdatePersonOrderStatus(personOrderId, (int)status);
-        }
-        public void MarkPersonAsServed(int personOrderId)
-        {
-            var orders = _repo.GetAll();
-
-            PersonOrder target = null;
-
+            var orders = _repo.GetAllTableOrders();
             foreach (var order in orders)
             {
-                var persons = _repo.GetPersonOrdersByTableId(order.TableOrderID);
+                order.PersonOrders = _repo.GetPersonOrdersByTableId(order.TableOrderID);
 
-                target = persons.FirstOrDefault(p => p.PersonOrderID == personOrderId);
-
-                if (target != null)
-                    break;
+                foreach (var person in order.PersonOrders)
+                {
+                    person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+                }
             }
 
-            if (target == null)
-                return;
+            return orders;
+        }
 
-            if (target.OrderStatus != OrderStatus.ReadyToBeServed)
-                return;
 
-            _repo.UpdatePersonOrderStatus(
-                personOrderId,
-                (int)OrderStatus.Served
-            );
+        public void ChangeOrderStatus(OrderTable order)
+        {
+            _repo.UpdateOrderStatus(order);
+        }
+
+        public void ChangePersonOrderStatus(PersonOrder personOrder)
+        {
+            _repo.UpdatePersonOrderStatus(personOrder);
+        }
+        public void MarkPersonAsServed(PersonOrder personOrder)
+        {
+            personOrder.OrderStatus = OrderStatus.Served;
+
+            _repo.UpdatePersonOrderStatus(personOrder);
+        }
+
+        public List<OrderTable> GetRecentTableOrders(int count = 10)
+        {
+            var orders = _repo.GetRecentTableOrders(count);
+            foreach (var order in orders)
+            {
+                order.PersonOrders = _repo.GetPersonOrdersByTableId(order.TableOrderID);
+
+                foreach (var person in order.PersonOrders)
+                {
+                    person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+                }
+            }
+
+                
+            return orders;
         }
     }
 }

@@ -4,13 +4,14 @@ namespace WebApplication3.repo
 {
     public interface IOrderRepository
     {
-        // GET
         OrderTable? GetById(int id);
-        List<OrderTable> GetAll();
+        List<OrderTable> GetAllTableOrders();
+        public List<OrderTable> GetRecentTableOrders(int count = 10);
         List<PersonOrder> GetPersonOrdersByTableId(int tableOrderId);
 
-        // UPDATE
-        void UpdateOrderStatus(int orderId, int status);
-        void UpdatePersonOrderStatus(int personOrderId, int status);
+        void UpdateOrderStatus(OrderTable order);
+        void UpdatePersonOrderStatus(PersonOrder po);
+
+        List<OrderItem> GetOrderItemsByPersonOrderId(int personOrderId);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Models;
 using WebApplication3.Services.Interfaces;
 
@@ -13,12 +14,14 @@ namespace WebApplication3.Controllers
             _repository = repository;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             var tables = _repository.GetAll();
             return View(tables);
         }
 
+        [Authorize]
         public IActionResult ToggleStatus(int id)
         {
             var table = _repository.GetById(id);

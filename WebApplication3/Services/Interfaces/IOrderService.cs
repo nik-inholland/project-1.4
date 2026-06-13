@@ -7,10 +7,12 @@ namespace WebApplication3.Services.Interfaces
         OrderTable GetOrder(int id);
         List<OrderTable> GetAllOrders();
 
-        void ChangeOrderStatus(int orderId, OrderStatus status);
+        public List<OrderTable> GetRecentTableOrders(int count = 10);
 
-        void ChangePersonOrderStatus(int personOrderId, OrderStatus status);
+        void ChangeOrderStatus(OrderTable order);
 
-        void MarkPersonAsServed(int personOrderId);
+        void ChangePersonOrderStatus(PersonOrder personOrder);
+
+        void MarkPersonAsServed(PersonOrder personOrder);
     }
 }
