@@ -1,0 +1,71 @@
+﻿@model List<WebApplication3.Models.RestaurantTable>
+
+@using WebApplication3.Models
+
+<h2>Restaurant Tables</h2>
+
+<div class="table-grid">
+
+    @foreach (var table in Model)
+    {
+        string imagePath =
+        table.Occupied == TableStatus.Free
+        ? "/images/table-free.png"
+        : "/images/table-occupied.png";
+
+        <a asp-action="ToggleStatus"
+           asp-route-id="@table.TableID"
+           class="table-card">
+
+            <img src="@imagePath" alt="Table" />
+
+            <div class="table-text">
+                <h3>Table @table.TableID</h3>
+
+                <p>
+                    Status:
+                    <strong>@table.Occupied</strong>
+                </p>
+            </div>
+
+        </a>
+    }
+
+</div>
+
+<style>
+    .table-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .table-card {
+        width: 220px;
+        text-decoration: none;
+        color: black;
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        transition: 0.2s ease;
+    }
+
+    .table-card:hover {
+        transform: scale(1.03);
+        border-color: #666;
+    }
+
+    .table-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .table-text {
+        padding: 10px;
+        text-align: center;
+    }
+</style>

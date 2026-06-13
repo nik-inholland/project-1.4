@@ -1,0 +1,96 @@
+﻿@model WebApplication3.Models.OrderTable
+@using WebApplication3.Models
+
+<h2>Order – Table @Model.TableOrderID</h2>
+
+<p>Current status: <strong>@Model.OrderStatus</strong></p>
+<p>Created: @Model.CreatedAt.ToString("HH:mm")</p>
+<p>Parts: @Model.PersonOrders.Count</p>
+
+<hr />
+
+<h4>Change Order Status</h4>
+<form asp-action="ChangeOrderStatus" method="post">
+    <input type="hidden" asp-for="TableOrderID" />
+    <select name="OrderStatus">
+        <option value="@((int)OrderStatus.Ordered)" selected="@(Model.OrderStatus == OrderStatus.Ordered)">Ordered</option>
+        <option value="@((int)OrderStatus.BeingPrepared)" selected="@(Model.OrderStatus == OrderStatus.BeingPrepared)">Being Prepared</option>
+        <option value="@((int)OrderStatus.ReadyToBeServed)" selected="@(Model.OrderStatus == OrderStatus.ReadyToBeServed)">Ready to Serve</option>
+        <option value="@((int)OrderStatus.Served)" selected="@(Model.OrderStatus == OrderStatus.Served)">Served</option>
+    </select>
+    <button type="submit" class="btn btn-sm btn-primary">Update Order</button>
+</form>
+
+<hr />
+
+<h4>Parts of Order</h4>
+<form asp-action="ChangePersonOrderStatus" method="post" style="margin-bottom:8px;">
+    <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
+
+    <label>Part:</label>
+    <select name="PersonOrderID" id="personSelect">
+        @foreach (var part in Model.PersonOrders)
+        {
+            <option value="@part.PersonOrderID">
+                @part.PersonName (@part.OrderStatus)
+            </option>
+        }
+    </select>
+
+    <label>New status:</label>
+    <select name="OrderStatus">
+        <option value="@((int)OrderStatus.Ordered)">Ordered</option>
+        <option value="@((int)OrderStatus.BeingPrepared)">Being Prepared</option>
+        <option value="@((int)OrderStatus.ReadyToBeServed)">Ready to Serve</option>
+        <option value="@((int)OrderStatus.Served)">Served</option>
+    </select>
+
+    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+</form>
+
+<div id="itemsContainer" style="margin-top:15px;">
+    @foreach (var part in Model.PersonOrders)
+    {
+        <div class="person-items" id="items-@part.PersonOrderID" style="display:none;">
+            <h5>@part.PersonName's items:</h5>
+            @if (part.OrderItems.Any())
+            {
+                <ul>
+                    @foreach (var item in part.OrderItems)
+                    {
+                        <li>
+                            @item.Name – @item.Quantity× –
+                            €@item.Price.ToString("F2") –
+                            @item.Category
+                            @if (!string.IsNullOrEmpty(item.Comments))
+                            {
+                                <br />
+                
+                                <small>Note: @item.Comments</small>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No items yet.</p>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function showItemsForSelectedPerson() {
+            var selectedId = document.getElementById('personSelect').value;
+            document.querySelectorAll('.person-items').forEach(el => el.style.display = 'none');
+            var el = document.getElementById('items-' + selectedId);
+            if (el) el.style.display = 'block';
+        }
+
+        showItemsForSelectedPerson();
+
+        document.getElementById('personSelect').addEventListener('change', showItemsForSelectedPerson);
+    </script>
+}
