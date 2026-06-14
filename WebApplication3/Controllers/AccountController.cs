@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 using WebApplication3.Models;
 using WebApplication3.Services.Interfaces;
 
@@ -10,10 +9,12 @@ namespace WebApplication3.Controllers
     public class AccountController : Controller
     {
         private readonly IEmployeeService _employeeService;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(IEmployeeService employeeService)
+        public AccountController(IEmployeeService employeeService, ILogger<AccountController> logger)
         {
             _employeeService = employeeService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -23,48 +24,59 @@ namespace WebApplication3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            Employee? employee = _employeeService.GetByLoginCredentials(
-                model.Username, model.Password);
-
-            if (employee is null)
+            try
             {
-                ViewBag.Error = "Invalid username or password";
+                if (!ModelState.IsValid)
+                    return View(model);
+
+                var employee = _employeeService.Authenticate(model.Username, model.Password);
+
+                if (employee == null)
+                {
+                    ModelState.AddModelError("", "Invalid username or password");
+                    _logger.LogWarning("Failed login attempt for user {Username}", model.Username);
+                    return View(model);
+                }
+
+                await _employeeService.SignInUser(employee, HttpContext);
+
+                HttpContext.Session.SetString("Username", employee.Username);
+                HttpContext.Session.SetInt32("EmployeeID", employee.EmployeeID);
+
+                _logger.LogInformation("User {Username} logged in successfully", employee.Username);
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Login error for user {Username}", model.Username);
+                ModelState.AddModelError("", "An error occurred during login. Please try again.");
                 return View(model);
             }
-
-            SignInUser(employee);
-
-            HttpContext.Session.SetString("Username", employee.Username);
-            HttpContext.Session.SetInt32("EmployeeID", employee.EmployeeID);
-
-            return RedirectToAction("Index", "Home");
         }
 
-        private async void SignInUser(Employee employee)
-        {
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, employee.EmployeeID.ToString()),
-                new Claim(ClaimTypes.Name, employee.Username),
-                new Claim(ClaimTypes.Role, employee.EmployeeType.Trim().ToLower()) 
-            };
-
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var principal = new ClaimsPrincipal(identity);
-
-            await HttpContext.SignInAsync(principal);
-        }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            try
+            {
+                HttpContext.Session.Clear();
+
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+                _logger.LogInformation("User logged out successfully");
+
+                return RedirectToAction("Login", "Account");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Logout error");
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

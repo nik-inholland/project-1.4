@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using WebApplication3.repo;
+using WebApplication3.repo.@interface;
 using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
 
@@ -15,6 +16,7 @@ namespace WebApplication3
 
             // --- Repositories ---
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+            builder.Services.AddScoped<IPersonOrderRepository, PersonOrderRepository>();
             builder.Services.AddScoped<ITableRepository, TableRepository>();
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
@@ -22,6 +24,7 @@ namespace WebApplication3
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
             builder.Services.AddScoped<ITableService, TableService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IPersonOrderService, PersonOrderService>();
 
             // --- Authentication (Cookie) ---
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

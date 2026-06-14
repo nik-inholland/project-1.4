@@ -1,18 +1,18 @@
 ﻿using WebApplication3.Models;
+using WebApplication3.Models.ViewModels;
 
 namespace WebApplication3.Services.Interfaces
 {
     public interface IOrderService
     {
-        OrderTable GetOrder(int id);
-        List<OrderTable> GetAllOrders();
-
-        public List<OrderTable> GetRecentTableOrders(int count = 10);
-
-        void ChangeOrderStatus(OrderTable order);
-
-        void ChangePersonOrderStatus(PersonOrder personOrder);
-
-        void MarkPersonAsServed(PersonOrder personOrder);
+        OrderDetailViewModel? GetOrder(int id);
+        OrderTable? GetOrderLight(int id);
+        List<OrderTable> GetAllOrders(bool includeClosed = false);
+        List<OrderListViewModel> GetRecentTableOrders(int count = 10, bool includeClosed = false);
+        void UpdateOrderStatus(int orderId, OrderStatus newStatus);
+        void CloseOrder(int id);
+        void Update(OrderTable order);
+        bool IsOrderClosed(int id);
+        void ReopenOrder(int orderId);
     }
 }

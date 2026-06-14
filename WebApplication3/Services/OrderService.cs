@@ -1,5 +1,8 @@
-﻿using WebApplication3.Models;
-using WebApplication3.repo;
+﻿
+using WebApplication3.Exceptions;
+using WebApplication3.Models;
+using WebApplication3.Models.ViewModels;
+using WebApplication3.repo.@interface;
 using WebApplication3.Services.Interfaces;
 
 namespace WebApplication3.Services
@@ -7,76 +10,200 @@ namespace WebApplication3.Services
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _repo;
+        private readonly IPersonOrderService _personOrderService;
+        private readonly ITableService _tableService;
 
-        public OrderService(IOrderRepository repo)
+        public OrderService(
+            IOrderRepository repo,
+            IPersonOrderService personOrderService,
+            ITableService tableService)
         {
             _repo = repo;
+            _personOrderService = personOrderService;
+            _tableService = tableService;
         }
-        public OrderTable GetOrder(int id)
+
+        public OrderDetailViewModel? GetOrder(int id)
+        {
+            var order = _repo.GetById(id);
+            if (order == null) return null;
+            order.PersonOrders = _personOrderService.GetPersonOrdersByTable(order);
+            foreach (var person in order.PersonOrders)
+            {
+                person.OrderItems = _personOrderService.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+                person.TotalPrice = person.OrderItems.Sum(i => (decimal)i.Price * i.Quantity);
+                _personOrderService.Update(person);
+            }
+            order.TotalPrice = order.PersonOrders.Sum(p => p.TotalPrice);
+            _repo.Update(order);
+            return MapToDetailViewModel(order);
+        }
+
+        public OrderTable? GetOrderLight(int id)
+        {
+            return _repo.GetById(id);
+        }
+
+        public List<OrderTable> GetAllOrders(bool includeClosed = false)
+        {
+            var orders = _repo.GetAllTableOrders();
+
+            foreach (var order in orders)
+            {
+                order.PersonOrders = _personOrderService.GetPersonOrdersByTable(order);
+            }
+
+            if (!includeClosed)
+            {
+                orders = orders.Where(o => o.ClosedAt == null).ToList();
+            }
+
+            return orders;
+        }
+
+        public List<OrderListViewModel> GetRecentTableOrders(int count = 10, bool includeClosed = false)
+        {
+            var orders = _repo.GetRecentTableOrders(count);
+            foreach (var order in orders)
+                order.PersonOrders = _personOrderService.GetPersonOrdersByTable(order);
+            if (!includeClosed)
+                orders = orders.Where(o => o.ClosedAt == null).ToList();
+            return MapToListViewModel(orders);
+        }
+
+        public void UpdateOrderStatus(int orderId, OrderStatus newStatus)
+        {
+            var order = _repo.GetById(orderId);
+
+            if (order == null)
+                throw new NotFoundException($"Order {orderId} not found");
+
+            if (order.ClosedAt != null)
+                throw new InvalidOperationException("Cannot update a closed order");
+
+            _repo.UpdateStatus(orderId, newStatus);
+        }
+
+        public void CloseOrder(int id)
         {
             var order = _repo.GetById(id);
 
             if (order == null)
-                return null;
+                throw new NotFoundException($"Order {id} not found");
 
-            order.PersonOrders = _repo.GetPersonOrdersByTableId(id);
+            if (order.ClosedAt != null)
+                throw new InvalidOperationException("Order is already closed");
+
+            order.PersonOrders = _personOrderService.GetPersonOrdersByTable(order);
 
             foreach (var person in order.PersonOrders)
             {
-                person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+                person.OrderItems = _personOrderService.GetOrderItemsByPersonOrderId(person.PersonOrderID);
+                person.TotalPrice = person.OrderItems.Sum(i => (decimal)i.Price * i.Quantity);
+                _personOrderService.Update(person);
             }
 
-            return order;
-        }
+            decimal totalPrice = order.PersonOrders.Sum(p => p.TotalPrice);
+            _repo.CloseOrder(id, totalPrice, DateTime.Now);
 
-        public List<OrderTable> GetAllOrders()
-        {
-            var orders = _repo.GetAllTableOrders();
-            foreach (var order in orders)
+            var table = _tableService.GetById(order.TableNumber);
+            if (table != null && table.Occupied == TableStatus.Occupied)
             {
-                order.PersonOrders = _repo.GetPersonOrdersByTableId(order.TableOrderID);
-
-                foreach (var person in order.PersonOrders)
-                {
-                    person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
-                }
+                _tableService.ToggleTableStatus(order.TableNumber);
             }
-
-            return orders;
         }
 
-
-        public void ChangeOrderStatus(OrderTable order)
+        public void ReopenOrder(int id)
         {
-            _repo.UpdateOrderStatus(order);
-        }
+            var order = _repo.GetById(id);
 
-        public void ChangePersonOrderStatus(PersonOrder personOrder)
-        {
-            _repo.UpdatePersonOrderStatus(personOrder);
-        }
-        public void MarkPersonAsServed(PersonOrder personOrder)
-        {
-            personOrder.OrderStatus = OrderStatus.Served;
+            if (order == null)
+                throw new NotFoundException($"Order {id} not found");
 
-            _repo.UpdatePersonOrderStatus(personOrder);
-        }
+            if (order.ClosedAt == null)
+                throw new InvalidOperationException("Order is not closed");
 
-        public List<OrderTable> GetRecentTableOrders(int count = 10)
-        {
-            var orders = _repo.GetRecentTableOrders(count);
-            foreach (var order in orders)
+            _repo.ReopenOrder(id);
+
+            var table = _tableService.GetById(order.TableNumber);
+            if (table != null && table.Occupied == TableStatus.Free)
             {
-                order.PersonOrders = _repo.GetPersonOrdersByTableId(order.TableOrderID);
-
-                foreach (var person in order.PersonOrders)
-                {
-                    person.OrderItems = _repo.GetOrderItemsByPersonOrderId(person.PersonOrderID);
-                }
+                _tableService.ToggleTableStatus(order.TableNumber);
             }
+        }
 
-                
-            return orders;
+        public void CancelOrder(int id)
+        {
+            var order = _repo.GetById(id);
+
+            if (order == null)
+                throw new NotFoundException($"Order {id} not found");
+
+            if (order.ClosedAt != null)
+                throw new InvalidOperationException("Cannot cancel a closed order");
+
+            if ((OrderStatus)order.OrderStatus == OrderStatus.Served)
+                throw new InvalidOperationException("Cannot cancel an order that has been served");
+
+            order.OrderStatus = OrderStatus.Cancelled;
+            order.ClosedAt = DateTime.Now;
+            _repo.Update(order);
+        }
+
+        public void Update(OrderTable order)
+        {
+            if (order == null)
+                throw new ArgumentNullException(nameof(order));
+
+            _repo.Update(order);
+        }
+
+        public bool IsOrderClosed(int id)
+        {
+            var order = _repo.GetById(id);
+            return order?.ClosedAt != null;
+        }
+
+        private OrderDetailViewModel MapToDetailViewModel(OrderTable order)
+        {
+            return new OrderDetailViewModel
+            {
+                TableOrderID = order.TableOrderID,
+                TableNumber = order.TableNumber,
+                Status = (OrderStatus)order.OrderStatus,
+                CreatedAt = order.CreatedAt,
+                TotalPrice = order.TotalPrice,
+                IsClosed = order.ClosedAt != null,
+                ClosedAt = order.ClosedAt,
+                PersonOrders = order.PersonOrders.Select(p => new PersonOrderViewModel
+                {
+                    PersonOrderID = p.PersonOrderID,
+                    PersonName = p.PersonName,
+                    Status = (OrderStatus)p.OrderStatus,
+                    TotalPrice = p.TotalPrice,
+                    Items = p.OrderItems.Select(i => new OrderItemViewModel
+                    {
+                        Name = i.Name,
+                        Comments = i.Comments,
+                        Price = i.Price,
+                        Quantity = i.Quantity,
+                        Category = i.Category
+                    }).ToList()
+                }).ToList()
+            };
+        }
+
+        private List<OrderListViewModel> MapToListViewModel(List<OrderTable> orders)
+        {
+            return orders.Select(o => new OrderListViewModel
+            {
+                TableOrderID = o.TableOrderID,
+                TableNumber = o.TableNumber,
+                Status = (OrderStatus)o.OrderStatus,
+                CreatedAt = o.CreatedAt,
+                PersonCount = o.PersonOrders?.Count ?? 0,
+                IsClosed = o.ClosedAt != null
+            }).ToList();
         }
     }
 }

@@ -1,36 +1,25 @@
-﻿@model List<WebApplication3.Models.RestaurantTable>
-
+﻿@model List<WebApplication3.Models.ViewModels.TableViewModel>
 @using WebApplication3.Models
 
 <h2>Restaurant Tables</h2>
 
 <div class="table-grid">
-
     @foreach (var table in Model)
     {
-        string imagePath =
-        table.Occupied == TableStatus.Free
+        string imagePath = table.Occupied == TableStatus.Free
         ? "/images/table-free.png"
         : "/images/table-occupied.png";
 
-        <a asp-action="ToggleStatus"
-           asp-route-id="@table.TableID"
-           class="table-card">
-
-            <img src="@imagePath" alt="Table" />
-
-            <div class="table-text">
-                <h3>Table @table.TableID</h3>
-
-                <p>
-                    Status:
-                    <strong>@table.Occupied</strong>
-                </p>
-            </div>
-
-        </a>
+        <form asp-action="ToggleStatus" asp-route-id="@table.TableID" method="post" class="table-card-form">
+            <button type="submit" class="table-card">
+                <img src="@imagePath" alt="Table" />
+                <div class="table-text">
+                    <h3>Table @table.TableID</h3>
+                    <p>Status: <strong>@table.Occupied</strong></p>
+                </div>
+            </button>
+        </form>
     }
-
 </div>
 
 <style>
@@ -42,8 +31,19 @@
         margin-top: 20px;
     }
 
+    .table-card-form {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
     .table-card {
         width: 220px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
         text-decoration: none;
         color: black;
         border: 2px solid #ccc;
@@ -51,18 +51,20 @@
         overflow: hidden;
         background: white;
         transition: 0.2s ease;
+        padding: 0;
+        text-align: center;
     }
 
-    .table-card:hover {
-        transform: scale(1.03);
-        border-color: #666;
-    }
+        .table-card:hover {
+            transform: scale(1.03);
+            border-color: #666;
+        }
 
-    .table-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
+        .table-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
 
     .table-text {
         padding: 10px;

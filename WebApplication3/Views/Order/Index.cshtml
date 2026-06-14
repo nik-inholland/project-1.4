@@ -1,32 +1,90 @@
-﻿@model List<WebApplication3.Models.OrderTable>
+﻿@model List<WebApplication3.Models.ViewModels.OrderListViewModel>
 @using WebApplication3.Models
 
 <h2>Restaurant Orders</h2>
 
-<div class="order-grid">
-    @foreach (var order in Model.OrderBy(o => o.TableOrderID))
-    {
-        string statusClass = order.OrderStatus switch
-        {
-            OrderStatus.Ordered => "ordered",
-            OrderStatus.BeingPrepared => "preparing",
-            OrderStatus.ReadyToBeServed => "ready",
-            OrderStatus.Served => "served",
-            _ => ""
-        };
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
 
-        <a asp-action="Details"
-           asp-route-id="@order.TableOrderID"
-           class="order-card @statusClass">
-            <div class="order-text">
-                <h3>Table @order.TableOrderID</h3>
-                <p>Status: <strong>@order.OrderStatus</strong></p>
-                <p>Time: @order.CreatedAt.ToString("HH:mm")</p>
-                <p>People: @order.PersonOrders.Count</p>
+<form asp-action="Index" method="get" class="mb-3">
+    <div class="row">
+        <div class="col-auto">
+            <label for="dateFilter" class="form-label">Filter by date:</label>
+            <input type="date" id="dateFilter" name="dateFilter"
+                   class="form-control"
+                   value="@ViewBag.DateFilter" />
+        </div>
+        <div class="col-auto">
+            <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox"
+                       name="showClosed" value="true"
+                       @(ViewBag.ShowClosed is true ? "checked" : "") />
+                <label class="form-check-label">Show closed orders</label>
             </div>
-        </a>
-    }
-</div>
+        </div>
+        <div class="col-auto mt-4">
+            <button type="submit" class="btn btn-outline-secondary">Apply</button>
+            <a asp-action="Index" class="btn btn-outline-danger">Clear</a>
+        </div>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No orders found.</div>
+}
+else
+{
+    <div class="order-grid">
+        @foreach (var order in Model.OrderBy(o => o.TableNumber))
+        {
+            string statusClass = order.Status switch
+            {
+                OrderStatus.Ordered => "ordered",
+                OrderStatus.BeingPrepared => "preparing",
+                OrderStatus.ReadyToBeServed => "ready",
+                OrderStatus.Served => "served",
+                OrderStatus.Cancelled => "cancelled",
+                _ => ""
+            };
+
+            <div class="order-card @statusClass @(order.IsClosed ? "closed" : "")">
+                <a asp-action="Details" asp-route-id="@order.TableOrderID" class="order-link">
+                    <div class="order-text">
+                        <h3>Table @order.TableNumber</h3>
+                        <p>Status: <strong>@order.Status</strong></p>
+                        <p>Date: @order.CreatedAt.ToString("dd/MM")</p>
+                        <p>Time: @order.CreatedAt.ToString("HH:mm")</p>
+                        <p>People: @order.PersonCount</p>
+                        @if (order.IsClosed)
+                        {
+                            <span class="badge bg-secondary">Closed</span>
+                        }
+                    </div>
+                </a>
+                @if (order.IsClosed)
+                {
+                    <form asp-action="ReopenOrder" method="post" class="reopen-form">
+                        <input type="hidden" name="id" value="@order.TableOrderID" />
+                        <button type="submit" class="btn btn-sm btn-warning reopen-btn">↻ Reopen</button>
+                    </form>
+                }
+            </div>
+        }
+    </div>
+}
 
 <style>
     .order-grid {
@@ -39,22 +97,37 @@
 
     .order-card {
         width: 220px;
-        text-decoration: none;
-        color: black;
         border: 3px solid #ccc;
         border-radius: 12px;
-        padding: 20px;
         background: white;
         transition: 0.2s ease;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        position: relative;
     }
 
         .order-card:hover {
             transform: scale(1.03);
         }
 
+    .order-link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 20px;
+    }
+
     .order-text {
         text-align: center;
+    }
+
+    .reopen-form {
+        padding: 0 20px 15px 20px;
+        text-align: center;
+    }
+
+    .reopen-btn {
+        width: 100%;
+        font-size: 0.8rem;
     }
 
     .ordered {
@@ -73,6 +146,15 @@
     .served {
         border-color: dodgerblue;
         opacity: 0.8;
+    }
+
+    .cancelled {
+        border-color: red;
+        opacity: 0.7;
+    }
+
+    .closed {
+        opacity: 0.6;
     }
 
     .ready:hover {

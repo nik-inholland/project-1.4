@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using WebApplication3.Models;
+using WebApplication3.repo.@interface;
 
 namespace WebApplication3.repo
 {
@@ -9,30 +10,20 @@ namespace WebApplication3.repo
 
         public TableRepository(IConfiguration configuration)
         {
-            _connectionString =
-                configuration.GetConnectionString("ChapeauConnection");
+            _connectionString = configuration.GetConnectionString("ChapeauConnection");
         }
 
         public List<RestaurantTable> GetAll()
         {
             List<RestaurantTable> tables = new();
 
-            using SqlConnection connection =
-                new SqlConnection(_connectionString);
+            using SqlConnection connection = new SqlConnection(_connectionString);
 
-            string query =
-                @"SELECT tableID,
-                         Occupied
-                  FROM Tables
-                  ORDER BY tableID";
+            string query = @"SELECT tableID, Occupied FROM Tables ORDER BY tableID";
 
-            SqlCommand command =
-                new SqlCommand(query, connection);
-
+            SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
-
-            SqlDataReader reader =
-                command.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -46,24 +37,16 @@ namespace WebApplication3.repo
         {
             RestaurantTable? table = null;
 
-            using SqlConnection connection =
-                new SqlConnection(_connectionString);
+            using SqlConnection connection = new SqlConnection(_connectionString);
 
-            string query =
-                @"SELECT tableID,
-                         Occupied
-                  FROM Tables
-                  WHERE tableID = @id";
+            string query = @"SELECT tableID, Occupied FROM Tables WHERE tableID = @id";
 
-            SqlCommand command =
-                new SqlCommand(query, connection);
+            SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@id", id);
 
             connection.Open();
-
-            SqlDataReader reader =
-                command.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             if (reader.Read())
             {
@@ -75,36 +58,22 @@ namespace WebApplication3.repo
 
         public void Update(RestaurantTable table)
         {
-            using SqlConnection connection =
-                new SqlConnection(_connectionString);
+            using SqlConnection connection = new SqlConnection(_connectionString);
 
-            string query =
-                @"UPDATE Tables
-                  SET Occupied = @occupied
-                  WHERE tableID = @id";
+            string query = @"UPDATE Tables SET Occupied = @occupied WHERE tableID = @id";
 
-            SqlCommand command =
-                new SqlCommand(query, connection);
+            SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue(
-                "@occupied",
-                (int)table.Occupied);
-
-            command.Parameters.AddWithValue(
-                "@id",
-                table.TableID);
+            command.Parameters.AddWithValue("@occupied", (int)table.Occupied);
+            command.Parameters.AddWithValue("@id", table.TableID);
 
             connection.Open();
-
             command.ExecuteNonQuery();
         }
 
-        private RestaurantTable ReadTable(
-            SqlDataReader reader)
+        private RestaurantTable ReadTable(SqlDataReader reader)
         {
-            return new RestaurantTable(
-                (int)reader["tableID"],
-                (TableStatus)(int)reader["Occupied"]);
+            return new RestaurantTable((int)reader["tableID"], (TableStatus)(int)reader["Occupied"]);
         }
     }
 }
