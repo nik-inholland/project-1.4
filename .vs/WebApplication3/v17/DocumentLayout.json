@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -139,10 +143,6 @@
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -194,21 +194,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\OrderService.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAkwH4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:14:18.132Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -217,14 +204,14 @@
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\OrderController.cs",
               "RelativeToolTip": "WebApplication3\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-21T09:16:23.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PersonOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\PersonOrderService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\PersonOrderService.cs",
@@ -232,12 +219,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\PersonOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T14:00:31.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T14:00:31.08Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Index.cshtml",
@@ -245,12 +231,11 @@
               "RelativeToolTip": "WebApplication3\\Views\\Order\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T09:16:56.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T09:16:56.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TableService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\TableService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\TableService.cs",
@@ -258,12 +243,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\TableService.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAYwDEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:22:07.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:22:07.116Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ITableService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
@@ -271,12 +255,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:25:23.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:25:23.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Details.cshtml",
@@ -284,12 +267,11 @@
               "RelativeToolTip": "WebApplication3\\Views\\Order\\Details.cshtml",
               "ViewState": "AgIAAD0AAAAAAAAAAAAwwGwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T09:17:09.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T09:17:09.584Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
@@ -297,12 +279,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:13:47.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T09:13:47.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\OrderRepository.cs",
@@ -310,12 +291,36 @@
               "RelativeToolTip": "WebApplication3\\repo\\OrderRepository.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAowCMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:03:17.034Z",
+              "WhenOpened": "2026-05-21T09:03:17.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T13:09:11.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\OrderService.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAkwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T09:14:18.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "IPersonOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
@@ -323,12 +328,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:59:32.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T13:59:32.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
@@ -336,12 +340,11 @@
               "RelativeToolTip": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:53:44.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:53:44.791Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "IEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
@@ -349,12 +352,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:40:23.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T07:40:23.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Exceptions\\NotFoundException.cs",
@@ -362,12 +364,11 @@
               "RelativeToolTip": "WebApplication3\\Exceptions\\NotFoundException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:23:51.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:23:51.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "TableRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\TableRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\TableRepository.cs",
@@ -375,12 +376,11 @@
               "RelativeToolTip": "WebApplication3\\repo\\TableRepository.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:05:31.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:05:31.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PersonOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\PersonOrderRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\PersonOrderRepository.cs",
@@ -388,12 +388,11 @@
               "RelativeToolTip": "WebApplication3\\repo\\PersonOrderRepository.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAwwDsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:55:25.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T13:55:25.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "OrderDetailViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
@@ -401,12 +400,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:43:50.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:43:50.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderStatus.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderStatus.cs",
@@ -414,12 +412,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\OrderStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:08:29.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T09:08:29.382Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\HomeController.cs",
@@ -427,12 +424,11 @@
               "RelativeToolTip": "WebApplication3\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:29:22.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T11:29:22.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "TableController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\TableController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\TableController.cs",
@@ -440,12 +436,11 @@
               "RelativeToolTip": "WebApplication3\\Controllers\\TableController.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAACEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:02:37.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:02:37.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "OrderTable.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderTable.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderTable.cs",
@@ -453,12 +448,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\OrderTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:54:10.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:54:10.187Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Table\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Table\\Index.cshtml",
@@ -466,12 +460,11 @@
               "RelativeToolTip": "WebApplication3\\Views\\Table\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T08:02:56.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:02:56.553Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "OrderItemViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
@@ -479,12 +472,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:28.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:44:28.083Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "OrderListViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
@@ -492,12 +484,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:25:21.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:25:21.483Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "PersonOrderViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
@@ -505,12 +496,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:13.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:44:13.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "TableViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
@@ -518,12 +508,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:49.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T15:44:49.801Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderItem.cs",
@@ -531,12 +520,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\OrderItem.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA1wCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:06:08.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T11:06:08.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "PersonOrder.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\PersonOrder.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\PersonOrder.cs",
@@ -544,12 +532,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\PersonOrder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:59:59.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:59:59.695Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "RestaurantTable.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\RestaurantTable.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\RestaurantTable.cs",
@@ -557,12 +544,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\RestaurantTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:04:58.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:04:58.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "TableStatus.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\TableStatus.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\TableStatus.cs",
@@ -570,12 +556,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\TableStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:04:40.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:04:40.56Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\LoginModel.cs",
@@ -583,12 +568,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\LoginModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:35:17.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T12:35:17.688Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ItemCategory.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ItemCategory.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ItemCategory.cs",
@@ -596,12 +580,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ItemCategory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T13:35:27.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-13T13:35:27.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ErrorViewModel.cs",
@@ -609,12 +592,11 @@
               "RelativeToolTip": "WebApplication3\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:20:43.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T11:20:43.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\EmployeeService.cs",
@@ -622,12 +604,11 @@
               "RelativeToolTip": "WebApplication3\\Services\\EmployeeService.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwD4AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:39:52.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T07:39:52.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
@@ -635,21 +616,7 @@
               "RelativeToolTip": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAFoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-19T13:13:23.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAwwEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:09:11.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T13:13:23.467Z"
             },
             {
               "$type": "Document",
@@ -661,8 +628,7 @@
               "RelativeToolTip": "WebApplication3\\Program.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwDsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:20:58.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T11:20:58.989Z"
             },
             {
               "$type": "Document",
@@ -674,8 +640,7 @@
               "RelativeToolTip": "WebApplication3\\repo\\interface\\ITableRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:05:18.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T08:05:18.056Z"
             },
             {
               "$type": "Document",
@@ -687,8 +652,7 @@
               "RelativeToolTip": "WebApplication3\\helper\\PasswordHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:07:54.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T13:07:54.486Z"
             },
             {
               "$type": "Document",
@@ -700,8 +664,7 @@
               "RelativeToolTip": "WebApplication3\\repo\\UsersRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:50:05.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T07:50:05.686Z"
             },
             {
               "$type": "Document",
@@ -713,8 +676,7 @@
               "RelativeToolTip": "WebApplication3\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-13T10:53:18.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T10:53:18.491Z"
             },
             {
               "$type": "Document",
@@ -726,8 +688,7 @@
               "RelativeToolTip": "WebApplication3\\repo\\interface\\IPersonOrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:54:33.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T13:54:33.709Z"
             },
             {
               "$type": "Document",
@@ -739,8 +700,7 @@
               "RelativeToolTip": "WebApplication3\\repo\\interface\\IUsersRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:54:35.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T12:54:35.324Z"
             },
             {
               "$type": "Document",
@@ -752,8 +712,7 @@
               "RelativeToolTip": "WebApplication3\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:51:17.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T12:51:17.821Z"
             },
             {
               "$type": "Document",
