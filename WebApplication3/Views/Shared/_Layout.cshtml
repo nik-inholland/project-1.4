@@ -1,4 +1,4 @@
-﻿@using System.Security.Claims  @* optional, but helps with FindFirst *@
+﻿@using System.Security.Claims
 @{
     var isAuthenticated = User.Identity?.IsAuthenticated ?? false;
     var userRole = User.FindFirst(ClaimTypes.Role)?.Value ?? string.Empty;
@@ -35,20 +35,11 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (isAuthenticated)
                         {
-                            @* These links are visible to ALL logged-in users *@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Order" asp-action="Index">Orders</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Table" asp-action="Index">Tables</a>
-                            </li>
-                        }
-
-                        @* Only managers and chefs see admin links *@
-                        @if (User.IsInRole("manager") || User.IsInRole("admin") || User.IsInRole("chef"))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Employees" asp-action="Create">Add employee</a>
                             </li>
                         }
                     </ul>
@@ -62,7 +53,12 @@
                                 </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-link nav-link text-danger border-0">
+                                        Logout
+                                    </button>
+                                </form>
                             </li>
                         }
                         else

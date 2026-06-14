@@ -1,25 +1,42 @@
-﻿@model WebApplication3.Models.OrderTable
+﻿@model WebApplication3.Models.ViewModels.OrderDetailViewModel
 @using WebApplication3.Models
 
-<h2>Order – Table @Model.TableOrderID</h2>
+<h2>Order – Table @Model.TableNumber</h2>
 
-<p>Current status: <strong>@Model.OrderStatus</strong></p>
+<p>Current status: <strong>@Model.Status</strong></p>
 <p>Created: @Model.CreatedAt.ToString("HH:mm")</p>
-<p>Parts: @Model.PersonOrders.Count</p>
+<p>People: @Model.PersonOrders.Count</p>
+<p>Order total: <strong>€@Model.TotalPrice.ToString("F2")</strong></p>
 
 <hr />
 
 <h4>Change Order Status</h4>
 <form asp-action="ChangeOrderStatus" method="post">
-    <input type="hidden" asp-for="TableOrderID" />
+    <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
     <select name="OrderStatus">
-        <option value="@((int)OrderStatus.Ordered)" selected="@(Model.OrderStatus == OrderStatus.Ordered)">Ordered</option>
-        <option value="@((int)OrderStatus.BeingPrepared)" selected="@(Model.OrderStatus == OrderStatus.BeingPrepared)">Being Prepared</option>
-        <option value="@((int)OrderStatus.ReadyToBeServed)" selected="@(Model.OrderStatus == OrderStatus.ReadyToBeServed)">Ready to Serve</option>
-        <option value="@((int)OrderStatus.Served)" selected="@(Model.OrderStatus == OrderStatus.Served)">Served</option>
+        @foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
+        {
+            <option value="@((int)status)" selected="@(Model.Status == status)">
+                @status
+            </option>
+        }
     </select>
     <button type="submit" class="btn btn-sm btn-primary">Update Order</button>
 </form>
+
+<hr />
+
+@if (!Model.IsClosed)
+{
+    <form asp-action="CloseOrder" method="post">
+        <input type="hidden" name="id" value="@Model.TableOrderID" />
+        <button type="submit" class="btn btn-sm btn-danger">Close Order</button>
+    </form>
+}
+else
+{
+    <p><strong>Order closed at:</strong> @Model.ClosedAt?.ToString("HH:mm")</p>
+}
 
 <hr />
 
@@ -27,22 +44,22 @@
 <form asp-action="ChangePersonOrderStatus" method="post" style="margin-bottom:8px;">
     <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
 
-    <label>Part:</label>
+    <label>Person:</label>
     <select name="PersonOrderID" id="personSelect">
         @foreach (var part in Model.PersonOrders)
         {
             <option value="@part.PersonOrderID">
-                @part.PersonName (@part.OrderStatus)
+                @part.PersonName (@part.Status)
             </option>
         }
     </select>
 
     <label>New status:</label>
-    <select name="OrderStatus">
-        <option value="@((int)OrderStatus.Ordered)">Ordered</option>
-        <option value="@((int)OrderStatus.BeingPrepared)">Being Prepared</option>
-        <option value="@((int)OrderStatus.ReadyToBeServed)">Ready to Serve</option>
-        <option value="@((int)OrderStatus.Served)">Served</option>
+    <select name="Status">
+        @foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
+        {
+            <option value="@((int)status)">@status</option>
+        }
     </select>
 
     <button type="submit" class="btn btn-sm btn-primary">Update</button>
@@ -52,20 +69,17 @@
     @foreach (var part in Model.PersonOrders)
     {
         <div class="person-items" id="items-@part.PersonOrderID" style="display:none;">
-            <h5>@part.PersonName's items:</h5>
-            @if (part.OrderItems.Any())
+            <h5>@part.PersonName's items — <strong>€@part.TotalPrice.ToString("F2")</strong></h5>
+            @if (part.Items.Any())
             {
                 <ul>
-                    @foreach (var item in part.OrderItems)
+                    @foreach (var item in part.Items)
                     {
                         <li>
-                            @item.Name – @item.Quantity× –
-                            €@item.Price.ToString("F2") –
-                            @item.Category
+                            @item.Name – @item.Quantity× – €@item.Price.ToString("F2") – @item.Category
                             @if (!string.IsNullOrEmpty(item.Comments))
                             {
                                 <br />
-                
                                 <small>Note: @item.Comments</small>
                             }
                         </li>
@@ -90,7 +104,6 @@
         }
 
         showItemsForSelectedPerson();
-
         document.getElementById('personSelect').addEventListener('change', showItemsForSelectedPerson);
     </script>
 }

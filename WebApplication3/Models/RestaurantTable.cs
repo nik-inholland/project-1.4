@@ -10,9 +10,7 @@
         {
         }
 
-        public RestaurantTable(
-            int tableID,
-            TableStatus occupied)
+        public RestaurantTable(int tableID, TableStatus occupied)
         {
             TableID = tableID;
             Occupied = occupied;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication3.Models;
+using WebApplication3.Exceptions;
+using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
 
 namespace WebApplication3.Controllers
@@ -22,19 +23,22 @@ namespace WebApplication3.Controllers
         }
 
         [Authorize]
+        [HttpPost]
         public IActionResult ToggleStatus(int id)
         {
-            var table = _repository.GetById(id);
-
-            if (table == null)
+            try
+            {
+                _repository.ToggleTableStatus(id);
+                TempData["Success"] = "Table status updated.";
+            }
+            catch (NotFoundException)
+            {
                 return NotFound();
-
-            table.Occupied =
-                table.Occupied == TableStatus.Free
-                ? TableStatus.Occupied
-                : TableStatus.Free;
-
-            _repository.Update(table);
+            }
+            catch
+            {
+                TempData["Error"] = "Unable to update table status.";
+            }
 
             return RedirectToAction(nameof(Index));
         }

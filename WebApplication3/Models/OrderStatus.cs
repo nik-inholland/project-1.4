@@ -5,6 +5,7 @@
         Ordered = 0,
         BeingPrepared = 1,
         ReadyToBeServed = 2,
-        Served = 3
+        Served = 3,
+        Cancelled = 4
     }
 }

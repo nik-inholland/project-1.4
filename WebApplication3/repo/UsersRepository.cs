@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using WebApplication3.Models;
+using WebApplication3.repo.@interface;
 
 namespace WebApplication3.repo
 {
@@ -9,27 +10,22 @@ namespace WebApplication3.repo
 
         public UsersRepository(IConfiguration configuration)
         {
-            _connectionString =
-                configuration.GetConnectionString("ChapeauConnection");
+            _connectionString = configuration.GetConnectionString("ChapeauConnection");
         }
 
         public List<Employee> GetAll()
         {
             List<Employee> employees = new List<Employee>();
 
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query =
-                    @"SELECT employeeID, employeeType, firstName, lastName, dateOfBirth, password, Username FROM Employee";
+                string query = @"SELECT employeeID, employeeType, firstName, lastName, dateOfBirth, password, Username FROM Employee";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
 
-                SqlDataReader reader =
-                    command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
@@ -44,8 +40,7 @@ namespace WebApplication3.repo
         {
             Employee? employee = null;
 
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query =
                     @"SELECT employeeID,
@@ -58,15 +53,13 @@ namespace WebApplication3.repo
                       FROM Employee
                       WHERE employeeID = @id";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@id", userId);
 
                 connection.Open();
 
-                SqlDataReader reader =
-                    command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
                 {
@@ -83,8 +76,7 @@ namespace WebApplication3.repo
         {
             Employee? employee = null;
 
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query =
                     @"SELECT employeeID,
@@ -98,17 +90,13 @@ namespace WebApplication3.repo
                       WHERE Username = @username
                       AND password = @password";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@username", userName);
-
                 command.Parameters.AddWithValue("@password", password);
 
                 connection.Open();
-
-                SqlDataReader reader =
-                    command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
                 {
@@ -121,8 +109,7 @@ namespace WebApplication3.repo
 
         public void Create(Employee user)
         {
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query =
                     @"INSERT INTO Employee
@@ -141,37 +128,23 @@ namespace WebApplication3.repo
                        @password,
                        @username)";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@employeeType",
-                    user.EmployeeType);
-
-                command.Parameters.AddWithValue("@firstName",
-                    user.FirstName);
-
-                command.Parameters.AddWithValue("@lastName",
-                    user.LastName);
-
-                command.Parameters.AddWithValue("@dateOfBirth",
-                    user.DateOfBirth);
-
-                command.Parameters.AddWithValue("@password",
-                    user.Password);
-
-                command.Parameters.AddWithValue("@username",
-                    user.Username);
+                command.Parameters.AddWithValue("@employeeType", user.EmployeeType);
+                command.Parameters.AddWithValue("@firstName", user.FirstName);
+                command.Parameters.AddWithValue("@lastName", user.LastName);
+                command.Parameters.AddWithValue("@dateOfBirth", user.DateOfBirth);
+                command.Parameters.AddWithValue("@password", user.Password);
+                command.Parameters.AddWithValue("@username", user.Username);
 
                 connection.Open();
-
                 command.ExecuteNonQuery();
             }
         }
 
         public void Update(Employee user)
         {
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query =
                     @"UPDATE Employee
@@ -183,77 +156,49 @@ namespace WebApplication3.repo
                           Username = @username
                       WHERE employeeID = @id";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@id",
-                    user.EmployeeID);
-
-                command.Parameters.AddWithValue("@employeeType",
-                    user.EmployeeType);
-
-                command.Parameters.AddWithValue("@firstName",
-                    user.FirstName);
-
-                command.Parameters.AddWithValue("@lastName",
-                    user.LastName);
-
-                command.Parameters.AddWithValue("@dateOfBirth",
-                    user.DateOfBirth);
-
-                command.Parameters.AddWithValue("@password",
-                    user.Password);
-
-                command.Parameters.AddWithValue("@username",
-                    user.Username);
+                command.Parameters.AddWithValue("@id", user.EmployeeID);
+                command.Parameters.AddWithValue("@employeeType", user.EmployeeType);
+                command.Parameters.AddWithValue("@firstName", user.FirstName);
+                command.Parameters.AddWithValue("@lastName", user.LastName);
+                command.Parameters.AddWithValue("@dateOfBirth", user.DateOfBirth);
+                command.Parameters.AddWithValue("@password", user.Password);
+                command.Parameters.AddWithValue("@username", user.Username);
 
                 connection.Open();
-
                 command.ExecuteNonQuery();
             }
         }
 
         public void Delete(Employee user)
         {
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query =
-                    @"DELETE FROM Employee
-                      WHERE employeeID = @id";
+                string query = @"DELETE FROM Employee WHERE employeeID = @id";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@id",
-                    user.EmployeeID);
+                command.Parameters.AddWithValue("@id", user.EmployeeID);
 
                 connection.Open();
-
                 command.ExecuteNonQuery();
             }
         }
 
         public bool UsernameExists(string username)
         {
-            using (SqlConnection connection =
-                   new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query =
-                    @"SELECT COUNT(*)
-                      FROM Employee
-                      WHERE Username = @username";
+                string query = @"SELECT COUNT(*) FROM Employee WHERE Username = @username";
 
-                SqlCommand command =
-                    new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@username",
-                    username);
+                command.Parameters.AddWithValue("@username", username);
 
                 connection.Open();
 
-                int count =
-                    (int)command.ExecuteScalar();
+                int count = (int)command.ExecuteScalar();
 
                 return count > 0;
             }
