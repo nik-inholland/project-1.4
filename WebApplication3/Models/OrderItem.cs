@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿using System;
 
 namespace WebApplication3.Models
 {
@@ -6,40 +6,32 @@ namespace WebApplication3.Models
     {
         public int OrderItemID { get; set; }
 
-        public string Name { get; set; }
-
-        public string Comments { get; set; }
-
-        public double Price { get; set; }
-
-        public bool VatCategory { get; set; }
-
-        public int Category { get; set; }
-
+        public int MenuItemID { get; set; }
+        public string ItemName { get; set; } = string.Empty;
+        public decimal PricePerItem { get; set; }
         public int Quantity { get; set; }
+        public string? Comments { get; set; }
 
-        public int MenuItemId { get; set; }
-        
-        public DateTime PlacedAt { get; set; }
+        public int? VatCategory { get; set; }
+        public int? Category { get; set; }
+        public int ItemStatus { get; set; } = 0;
 
-        public int PersonOrderId { get; set; }
+        public DateTime? PlacedAt { get; set; }
+        public int? PersonOrderID { get; set; }
 
-        public OrderItem()
+        public OrderItem() { }
+
+        public OrderItem(int menuItemID, string itemName, decimal pricePerItem, int quantity,
+                        string? comments = null, int? vatCategory = null, int? category = null)
         {
-        }
-
-        public OrderItem(int orderItemID, string name, string comment, double price, bool vatcategory, int category, int quantity, int menuitemid, DateTime placedat, int personalorderid)
-        {
-            OrderItemID = orderItemID;
-            Name = name;
-            Comments = comment;
-            Price = price;
-            VatCategory = vatcategory;
-            Category = category;
+            MenuItemID = menuItemID;
+            ItemName = itemName;
+            PricePerItem = pricePerItem;
             Quantity = quantity;
-            MenuItemId = menuitemid;
-            PlacedAt = placedat;
-            PersonOrderId = personalorderid;
+            Comments = comments;
+            VatCategory = vatCategory;
+            Category = category;
+            PlacedAt = DateTime.Now;
         }
     }
 }

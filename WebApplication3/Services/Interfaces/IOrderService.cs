@@ -14,5 +14,6 @@ namespace WebApplication3.Services.Interfaces
         void Update(OrderTable order);
         bool IsOrderClosed(int id);
         void ReopenOrder(int orderId);
+        void SaveOrder(int tableNumber, List<OrderItem> orderItems);
     }
 }

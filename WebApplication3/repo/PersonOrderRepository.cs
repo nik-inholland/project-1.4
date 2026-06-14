@@ -104,15 +104,15 @@ namespace WebApplication3.repo
             return new OrderItem
             {
                 OrderItemID = GetInt(reader, "OrderItemID"),
-                Name = GetString(reader, "itemName"),
+                ItemName = GetString(reader, "itemName"),
                 Comments = GetString(reader, "Comments"),
-                Price = (double)GetDecimal(reader, "PricePerItem"),
-                VatCategory = reader["vat_category"] != DBNull.Value && (bool)reader["vat_category"],
+                PricePerItem = GetDecimal(reader, "PricePerItem"),
+                VatCategory = reader["vat_category"] != DBNull.Value && (bool)reader["vat_category"] ? 1 : 0,
                 Category = GetInt(reader, "Category"),
                 Quantity = GetInt(reader, "Quantity"),
-                MenuItemId = GetInt(reader, "MenuItemId"),
-                PlacedAt = (DateTime)reader["TimePlaced"],
-                PersonOrderId = GetInt(reader, "PersonOrderId")
+                MenuItemID = GetInt(reader, "MenuItemId"),
+                PlacedAt = reader["TimePlaced"] == DBNull.Value ? DateTime.Now : (DateTime)reader["TimePlaced"],
+                PersonOrderID = GetInt(reader, "PersonOrderId")
             };
         }
     }

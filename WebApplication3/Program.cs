@@ -20,12 +20,16 @@ namespace WebApplication3
             builder.Services.AddScoped<ITableRepository, TableRepository>();
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
+            // ordering repos
+            builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+            builder.Services.AddScoped<IMenuService, MenuService>();
+
             // --- Services ---
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
             builder.Services.AddScoped<ITableService, TableService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IPersonOrderService, PersonOrderService>();
-
+           
             // --- Authentication (Cookie) ---
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>

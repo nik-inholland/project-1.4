@@ -134,5 +134,59 @@ namespace WebApplication3.repo
             conn.Open();
             cmd.ExecuteNonQuery();
         }
+        public void SaveOrder(OrderTable order, List<OrderItem> orderItems)
+        {
+            using var conn = new SqlConnection(_connectionString);
+            conn.Open();
+
+            string insertOrder = @"INSERT INTO TableOrder (TableNumber, TotalPrice, PaymentID, OrderStatus, CreatedAt)
+                           OUTPUT INSERTED.TableOrderID
+                           VALUES (@tableNumber, @totalPrice, @paymentID, @orderStatus, @createdAt)";
+
+            int tableOrderId;
+            using (var cmd = new SqlCommand(insertOrder, conn))
+            {
+                cmd.Parameters.AddWithValue("@tableNumber", order.TableNumber);
+                cmd.Parameters.AddWithValue("@totalPrice", order.TotalPrice);
+                cmd.Parameters.AddWithValue("@paymentID", order.PaymentID);
+                cmd.Parameters.AddWithValue("@orderStatus", (int)order.OrderStatus);
+                cmd.Parameters.AddWithValue("@createdAt", order.CreatedAt);
+                tableOrderId = (int)cmd.ExecuteScalar();
+            }
+
+            string insertPerson = @"INSERT INTO PersonOrder (TableOrderID, PersonName, TotalPrice, PaymentID, OrderStatus, CreatedAt)
+                            OUTPUT INSERTED.PersonOrderID
+                            VALUES (@tableOrderID, @personName, @totalPrice, @paymentID, @orderStatus, @createdAt)";
+
+            int personOrderId;
+            using (var cmd = new SqlCommand(insertPerson, conn))
+            {
+                cmd.Parameters.AddWithValue("@tableOrderID", tableOrderId);
+                cmd.Parameters.AddWithValue("@personName", "Guest");
+                cmd.Parameters.AddWithValue("@totalPrice", order.TotalPrice);
+                cmd.Parameters.AddWithValue("@paymentID", 0);
+                cmd.Parameters.AddWithValue("@orderStatus", (int)order.OrderStatus);
+                cmd.Parameters.AddWithValue("@createdAt", order.CreatedAt);
+                personOrderId = (int)cmd.ExecuteScalar();
+            }
+
+            string insertItem = @"INSERT INTO OrderItems (itemName, Comments, PricePerItem, vat_category, Category, Quantity, MenuItemId, TimePlaced, PersonOrderId)
+                          VALUES (@name, @comments, @price, @vat, @category, @quantity, @menuItemId, @placedAt, @personOrderId)";
+
+            foreach (var item in orderItems)
+            {
+                using var cmd = new SqlCommand(insertItem, conn);
+                cmd.Parameters.AddWithValue("@name", item.ItemName);
+                cmd.Parameters.AddWithValue("@comments", (object?)item.Comments ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@price", item.PricePerItem);
+                cmd.Parameters.AddWithValue("@vat", item.VatCategory.HasValue && item.VatCategory.Value == 1);
+                cmd.Parameters.AddWithValue("@category", (object?)item.Category ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@quantity", item.Quantity);
+                cmd.Parameters.AddWithValue("@menuItemId", item.MenuItemID);
+                cmd.Parameters.AddWithValue("@placedAt", item.PlacedAt ?? DateTime.Now);
+                cmd.Parameters.AddWithValue("@personOrderId", personOrderId);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

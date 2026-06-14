@@ -1,0 +1,64 @@
+﻿@model WebApplication3.Models.ViewModels.MenuViewModel
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h2>Restaurant Menu</h2>
+
+<!-- Filters -->
+<div class="mb-4">
+    <form asp-action="Menu" method="get" class="form-inline">
+        <label>Card:</label>
+        <select name="cardType" class="form-control mx-2">
+            <option value="All" selected="@(Model.SelectedCard == "All")">All</option>
+            <option value="Drinks" selected="@(Model.SelectedCard == "Drinks")">Drinks</option>
+            <option value="Lunch" selected="@(Model.SelectedCard == "Lunch")">Lunch</option>
+            <option value="Diner" selected="@(Model.SelectedCard == "Diner")">Diner</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MenuItems)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>€ @item.Price.ToString("0.00")</td>
+                <td>
+                    @if (item.IsOutOfStock())
+                    {
+                        <span class="badge bg-danger">Out of Stock</span>
+                    }
+                    else if (item.IsAlmostOutOfStock())
+                    {
+                        <span class="badge bg-warning">@item.QuantityInStock left</span>
+                    }
+                    else
+                    {
+                        <span>@item.QuantityInStock</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="TakeOrder" asp-route-tableNumber="1"
+                       class="btn btn-sm btn-success">Add to Order</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.HasItems)
+{
+    <p class="text-muted">No menu items found.</p>
+}

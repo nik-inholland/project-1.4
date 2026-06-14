@@ -1,0 +1,211 @@
+﻿@model WebApplication3.Models.ViewModels.TakeOrderViewModel
+@{
+    ViewData["Title"] = $"Take Order – Table {Model.TableNumber}";
+    var cardTypes = new[] { "All", "Lunch", "Diner", "Drinks" };
+    var courseTypes = new Dictionary<int, string>
+    {
+        {0,"All"},{1,"Starter"},{2,"Main Course"},{3,"Dessert"},
+        {4,"Special Starter"},{5,"Soup"},{6,"Premium Main"},{7,"Dessert Special"},
+        {8,"Soft Drink"},{9,"Beer"},{10,"Wine (Bottle)"},{11,"Wine (Glass)"},
+        {12,"Spirit"},{13,"Hot Drink"}
+    };
+    string activeCard = ViewBag.SelectedCard ?? "All";
+    int activeCourse = ViewBag.SelectedCourse ?? 0;
+    var menuItems = Model.MenuItems
+                        .Where(m => (activeCard == "All" || m.CardType == activeCard)
+                                 && (activeCourse == 0 || m.CourseType == activeCourse))
+                        .ToList();
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>🍽 Table @Model.TableNumber — Take Order</h2>
+    <a asp-controller="Table" asp-action="Index" class="btn btn-outline-secondary">← Back to Tables</a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="row g-3">
+
+    <!-- LEFT: Menu -->
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <strong>Menu</strong>
+            </div>
+            <div class="card-body">
+
+                <!-- Card type filter -->
+                <div class="mb-2 d-flex flex-wrap gap-1">
+                    @foreach (var card in cardTypes)
+                    {
+                        <a asp-action="TakeOrder"
+                           asp-route-tableNumber="@Model.TableNumber"
+                           asp-route-selectedCard="@card"
+                           asp-route-selectedCourse="@activeCourse"
+                           class="btn btn-sm @(activeCard == card ? "btn-dark" : "btn-outline-dark")">
+                            @card
+                        </a>
+                    }
+                </div>
+
+                <!-- Course type filter -->
+                <div class="mb-3 d-flex flex-wrap gap-1">
+                    @foreach (var kv in courseTypes)
+                    {
+                        <a asp-action="TakeOrder"
+                           asp-route-tableNumber="@Model.TableNumber"
+                           asp-route-selectedCard="@activeCard"
+                           asp-route-selectedCourse="@kv.Key"
+                           class="btn btn-sm @(activeCourse == kv.Key ? "btn-secondary" : "btn-outline-secondary")">
+                            @kv.Value
+                        </a>
+                    }
+                </div>
+
+                <!-- Menu items list -->
+                @if (!menuItems.Any())
+                {
+                    <p class="text-muted">No items match the selected filters.</p>
+                }
+                else
+                {
+                    <div class="list-group">
+                        @foreach (var item in menuItems)
+                        {
+                            <div class="list-group-item d-flex justify-content-between align-items-start @(item.IsOutOfStock() ? "opacity-50" : "")">
+                                <div class="me-2 flex-grow-1">
+                                    <strong>@item.Description</strong>
+                                    <span class="ms-2 text-muted small">€@item.Price.ToString("0.00")</span>
+                                    @if (item.IsOutOfStock())
+                                    {
+                                        <span class="badge bg-danger ms-1">Out of stock</span>
+                                    }
+                                    else if (item.IsAlmostOutOfStock())
+                                    {
+                                        <span class="badge bg-warning text-dark ms-1">
+                                            Almost out (@item.QuantityInStock left)
+                                        </span>
+                                    }
+                                </div>
+                                @if (!item.IsOutOfStock())
+                                {
+                                    <form asp-action="AddToOrder" method="post" class="d-flex gap-1 align-items-center">
+                                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                                        <input type="hidden" name="menuItemID" value="@item.MenuItemID" />
+                                        <input type="number" name="quantity" value="1" min="1"
+                                               max="@item.QuantityInStock"
+                                               class="form-control form-control-sm" style="width:60px" />
+                                        <button type="submit" class="btn btn-sm btn-success">+ Add</button>
+                                    </form>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: Current Order -->
+    <div class="col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white d-flex justify-content-between">
+                <strong>Current Order</strong>
+                <span>Total: €@Model.TotalPrice.ToString("0.00")</span>
+            </div>
+            <div class="card-body p-2">
+
+                @if (Model.CurrentOrderItems == null || !Model.CurrentOrderItems.Any())
+                {
+                    <p class="text-muted text-center mt-3">No items added yet.</p>
+                }
+                else
+                {
+                    <div class="list-group mb-3">
+                        @foreach (var item in Model.CurrentOrderItems)
+                        {
+                            <div class="list-group-item p-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong class="small">@item.ItemName</strong>
+                                    <span class="text-muted small">
+                                        €@((item.PricePerItem * item.Quantity).ToString("0.00"))
+                                    </span>
+                                </div>
+
+                                <!-- Quantity controls -->
+                                <div class="d-flex align-items-center gap-1 mt-1">
+                                    <form asp-action="DecreaseQuantity" method="post">
+                                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                                        <input type="hidden" name="menuItemID" value="@item.MenuItemID" />
+                                        <button type="submit" class="btn btn-sm btn-outline-secondary px-2 py-0">−</button>
+                                    </form>
+
+                                    <span class="px-2 fw-bold">@item.Quantity</span>
+
+                                    <form asp-action="IncreaseQuantity" method="post">
+                                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                                        <input type="hidden" name="menuItemID" value="@item.MenuItemID" />
+                                        <button type="submit" class="btn btn-sm btn-outline-secondary px-2 py-0">+</button>
+                                    </form>
+
+                                    <form asp-action="RemoveFromOrder" method="post" class="ms-auto">
+                                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                                        <input type="hidden" name="menuItemID" value="@item.MenuItemID" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger px-2 py-0"
+                                                onclick="return confirm('Remove @item.ItemName from order?')">
+                                            🗑
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Comment field -->
+                                <form asp-action="UpdateComment" method="post" class="mt-1 d-flex gap-1">
+                                    <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                                    <input type="hidden" name="menuItemID" value="@item.MenuItemID" />
+                                    <input type="text" name="comment" value="@item.Comments"
+                                           placeholder="Add comment (e.g. no salt)"
+                                           class="form-control form-control-sm" />
+                                    <button type="submit" class="btn btn-sm btn-outline-primary">💬</button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- Save & Cancel buttons -->
+                <div class="d-flex gap-2 mt-2">
+                    <form asp-action="SaveOrder" method="post" class="flex-grow-1">
+                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                        <button type="submit" class="btn btn-success w-100"
+                                onclick="return confirm('Save this order for Table @Model.TableNumber?')"
+                                @(Model.CurrentOrderItems == null || !Model.CurrentOrderItems.Any() ? "disabled" : "")>
+                            ✅ Save Order
+                        </button>
+                    </form>
+                    <form asp-action="CancelOrder" method="post">
+                        <input type="hidden" name="tableNumber" value="@Model.TableNumber" />
+                        <button type="submit" class="btn btn-outline-danger"
+                                onclick="return confirm('Cancel the entire order for Table @Model.TableNumber?')">
+                            ❌ Cancel
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
