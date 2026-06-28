@@ -5,5 +5,12 @@
 <div class="text-center">
     <h1 class="display-4">👨‍🍳 Waiter Panel</h1>
     <p class="lead">Welcome! Use the menu above to manage tables and orders.</p>
-    <a asp-action="Tables" class="btn btn-primary btn-lg">View Tables</a>
+    <div class="mt-4">
+        <a asp-controller="Table" asp-action="Index" class="btn btn-primary btn-lg mx-2">
+            🪑 View Tables
+        </a>
+        <a asp-controller="Order" asp-action="Index" class="btn btn-success btn-lg mx-2">
+            📋 View Orders
+        </a>
+    </div>
 </div>

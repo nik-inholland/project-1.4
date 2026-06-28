@@ -168,15 +168,17 @@ namespace WebApplication3.Services
 
                 return new WebApplication3.Models.ViewModels.OrderItemDetailViewModel
                 {
-                    OrderItemID = oi.OrderItemID,  
+                    OrderItemID = oi.OrderItemID,
                     Name = oi.MenuItem?.Description ?? $"Item #{oi.MenuItemID}",
                     Quantity = oi.Quantity,
                     Price = oi.MenuItem?.Price ?? 0,
                     Category = categoryName,
                     Comments = oi.Comments,
-                    ItemStatus = oi.itemStatus      
+                    ItemStatus = oi.itemStatus
                 };
             }).ToList();
+
+            decimal totalPrice = items.Sum(i => i.Quantity * i.Price);
 
             return new OrderDetailViewModel
             {
@@ -186,7 +188,7 @@ namespace WebApplication3.Services
                 CreatedAt = order.CreatedAt,
                 IsClosed = order.IsClosed,
                 ClosedAt = order.ClosedAt,
-                TotalPrice = order.TotalPrice,
+                TotalPrice = totalPrice,
                 Items = items
             };
         }

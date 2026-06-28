@@ -45,10 +45,11 @@ namespace WebApplication3.Controllers
 
                 HttpContext.Session.SetString("Username", employee.Username);
                 HttpContext.Session.SetInt32("EmployeeID", employee.EmployeeID);
+                HttpContext.Session.SetString("Role", employee.EmployeeType ?? "waiter");
 
                 _logger.LogInformation("User {Username} logged in successfully", employee.Username);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Waiter");
             }
             catch (Exception ex)
             {
