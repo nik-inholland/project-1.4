@@ -3,26 +3,25 @@
 
 <h2>Order – Table @Model.TableNumber</h2>
 
-<p>Current status: <strong>@Model.Status</strong></p>
-<p>Created: @Model.CreatedAt.ToString("HH:mm")</p>
-<p>People: @Model.PersonOrders.Count</p>
-<p>Order total: <strong>€@Model.TotalPrice.ToString("F2")</strong></p>
+<p><strong>Status:</strong> @Model.Status</p>
+<p><strong>Created:</strong> @Model.CreatedAt.ToString("HH:mm")</p>
+<p><strong>Total:</strong> €@Model.TotalPrice.ToString("F2")</p>
 
 <hr />
 
 <h4>Change Order Status</h4>
-<form asp-action="ChangeOrderStatus" method="post">
-    <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
-    <select name="OrderStatus">
-        @foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
-        {
-            <option value="@((int)status)" selected="@(Model.Status == status)">
-                @status
-            </option>
-        }
-    </select>
-    <button type="submit" class="btn btn-sm btn-primary">Update Order</button>
-</form>
+@if (!Model.IsClosed && (Model.Status == OrderStatus.ReadyToBeServed || Model.Status == OrderStatus.Served))
+{
+    string toggleLabel = Model.Status == OrderStatus.ReadyToBeServed ? "Mark as Served" : "Mark as Ready";
+    <form asp-action="ToggleOrderStatus" method="post">
+        <input type="hidden" name="tableOrderID" value="@Model.TableOrderID" />
+        <button type="submit" class="btn btn-sm btn-primary">@toggleLabel</button>
+    </form>
+}
+else
+{
+    <p><em>Status cannot be toggled (only ReadyToBeServed/Served are toggleable).</em></p>
+}
 
 <hr />
 
@@ -36,74 +35,66 @@
 else
 {
     <p><strong>Order closed at:</strong> @Model.ClosedAt?.ToString("HH:mm")</p>
+    <form asp-action="ReopenOrder" method="post">
+        <input type="hidden" name="id" value="@Model.TableOrderID" />
+        <button type="submit" class="btn btn-sm btn-secondary">Reopen Order</button>
+    </form>
 }
 
 <hr />
 
-<h4>Parts of Order</h4>
-<form asp-action="ChangePersonOrderStatus" method="post" style="margin-bottom:8px;">
-    <input type="hidden" name="TableOrderID" value="@Model.TableOrderID" />
+<h4>Order Items</h4>
 
-    <label>Person:</label>
-    <select name="PersonOrderID" id="personSelect">
-        @foreach (var part in Model.PersonOrders)
-        {
-            <option value="@part.PersonOrderID">
-                @part.PersonName (@part.Status)
-            </option>
-        }
-    </select>
-
-    <label>New status:</label>
-    <select name="Status">
-        @foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
-        {
-            <option value="@((int)status)">@status</option>
-        }
-    </select>
-
-    <button type="submit" class="btn btn-sm btn-primary">Update</button>
-</form>
-
-<div id="itemsContainer" style="margin-top:15px;">
-    @foreach (var part in Model.PersonOrders)
-    {
-        <div class="person-items" id="items-@part.PersonOrderID" style="display:none;">
-            <h5>@part.PersonName's items — <strong>€@part.TotalPrice.ToString("F2")</strong></h5>
-            @if (part.Items.Any())
+@if (Model.Items.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Comments</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
             {
-                <ul>
-                    @foreach (var item in part.Items)
-                    {
-                        <li>
-                            @item.Name – @item.Quantity× – €@item.Price.ToString("F2") – @item.Category
-                            @if (!string.IsNullOrEmpty(item.Comments))
-                            {
-                                <br />
-                                <small>Note: @item.Comments</small>
-                            }
-                        </li>
-                    }
-                </ul>
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>€@item.Price.ToString("F2")</td>
+                    <td>@item.Category</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.Comments))
+                        {
+                            <small>@item.Comments</small>
+                        }
+                    </td>
+                    <td>@item.ItemStatus</td>
+                    <td>
+                        @if (!Model.IsClosed && (item.ItemStatus == OrderStatus.ReadyToBeServed || item.ItemStatus == OrderStatus.Served))
+                        {
+                            string toggleLabel = item.ItemStatus == OrderStatus.ReadyToBeServed ? "Mark as Served" : "Mark as Ready";
+                            <form asp-action="ToggleItemStatus" method="post" style="display:inline;">
+                                <input type="hidden" name="orderId" value="@Model.TableOrderID" />
+                                <input type="hidden" name="orderItemId" value="@item.OrderItemID" />
+                                <button type="submit" class="btn btn-sm btn-outline-primary">@toggleLabel</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                    </td>
+                </tr>
             }
-            else
-            {
-                <p>No items yet.</p>
-            }
-        </div>
-    }
-</div>
-
-@section Scripts {
-    <script>
-        function showItemsForSelectedPerson() {
-            var selectedId = document.getElementById('personSelect').value;
-            document.querySelectorAll('.person-items').forEach(el => el.style.display = 'none');
-            var el = document.getElementById('items-' + selectedId);
-            if (el) el.style.display = 'block';
-        }
-
-        showItemsForSelectedPerson();
-        document.getElementById('personSelect').addEventListener('change', showItemsForSelectedPerson);
-    </script>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No items in this order.</p>
 }

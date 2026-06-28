@@ -1,198 +1,186 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\",
+  "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\waiter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\waiter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\order\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\order\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\menuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\menuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\menuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\interfaces\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\menurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\personorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\personorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\interfaces\\imenuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\imenuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\interfaces\\ipersonorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\ipersonorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\interfaces\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\personorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\personorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\order\\takeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\order\\takeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\table\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\table\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\interface\\imenuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\imenuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\viewmodels\\personorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\personorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\viewmodels\\tableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\tableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\tablestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\tablestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\personorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\personorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\interface\\itablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\interface\\itablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\itablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\interfaces\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\order\\testorderitems.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\order\\testorderitems.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\waiter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\waiter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\waiterorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\waiterorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\views\\table\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\table\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\takeorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\takeorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\helper\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\helper\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\restauranttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\models\\viewmodels\\waiterdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\viewmodels\\waiterdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\interfaces\\imenuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\interfaces\\imenuitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\menuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\menuitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\interface\\imenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\imenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\repo\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\interface\\ipersonorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\ipersonorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\repo\\interface\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\repo\\interface\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4-main\\webapplication3\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -202,586 +190,591 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\waiter\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\waiter\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\waiter\\Index.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\waiter\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Menu.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Menu.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Menu.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Menu.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Order\\Menu.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-27T22:53:09.337Z",
+              "WhenOpened": "2026-06-28T19:30:47.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WaiterController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\WaiterController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\WaiterController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\WaiterController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\WaiterController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-27T22:46:11.314Z",
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\wwwroot\\css\\index.css",
+              "RelativeDocumentMoniker": "WebApplication3\\wwwroot\\css\\index.css",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\wwwroot\\css\\index.css",
+              "RelativeToolTip": "WebApplication3\\wwwroot\\css\\index.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-28T19:30:41.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABMAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\OrderRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\OrderRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAADgvy4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:16:23.279Z",
+              "WhenOpened": "2026-06-28T12:34:53.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "PersonOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\PersonOrderService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\PersonOrderService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\PersonOrderService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\PersonOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T14:00:31.08Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Index.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Order\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKIAAAAIAAAAAAAAAA==",
+              "Title": "TakeOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\TakeOrder.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\TakeOrder.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\TakeOrder.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Order\\TakeOrder.cshtml",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAwwNIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T09:16:56.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TableService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\TableService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\TableService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\TableService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\TableService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAYwDEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:22:07.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ITableService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:25:23.124Z"
+              "WhenOpened": "2026-06-28T13:35:37.027Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Details.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Order\\Details.cshtml",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAwwGwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T09:17:09.584Z"
+              "Title": "MenuRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\MenuRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\MenuRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\MenuRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\MenuRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwF0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:29:16.179Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAwAAAAAAAAAA==",
+              "Title": "MenuService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\MenuService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\MenuService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\MenuService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\MenuService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAswEYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:13:47.831Z"
+              "WhenOpened": "2026-06-14T21:22:48.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuItemService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\MenuItemService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\MenuItemService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\MenuItemService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\MenuItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T13:06:30.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\OrderRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\OrderRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowCMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:03:17.034Z"
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Order\\Details.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-28T15:18:29.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABkAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:09:11.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\OrderService.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAkwH4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:14:18.132Z"
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Order\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-28T17:06:29.545Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "IPersonOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IPersonOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "IMenuItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:59:32.759Z"
+              "WhenOpened": "2026-06-28T12:31:44.858Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAmAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAIA2wJkAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:53:44.791Z"
+              "WhenOpened": "2026-06-14T20:40:06.306Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IEmployeeService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IEmployeeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "TableController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\TableController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\TableController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\TableController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\TableController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwC0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:40:23.673Z"
+              "WhenOpened": "2026-06-14T21:22:38.59Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NotFoundException.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Exceptions\\NotFoundException.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Exceptions\\NotFoundException.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Exceptions\\NotFoundException.cs",
-              "RelativeToolTip": "WebApplication3\\Exceptions\\NotFoundException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IMenuService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IMenuService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IMenuService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IMenuService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IMenuService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:23:51.441Z"
+              "WhenOpened": "2026-06-28T18:06:07.831Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "TableRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\TableRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\TableRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\TableRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\TableRepository.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwCwAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:05:31.404Z"
+              "WhenOpened": "2026-06-14T20:40:03.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T13:20:22.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\OrderService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\OrderService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAjwDQAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T21:22:53.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:32:01.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "PersonOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\PersonOrderRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\PersonOrderRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\PersonOrderRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\PersonOrderRepository.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDsAAAAIAAAAAAAAAA==",
+              "Title": "TableRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\TableRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\TableRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\TableRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\TableRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:55:25.869Z"
+              "WhenOpened": "2026-06-28T15:33:49.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "OrderDetailViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "ITableRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\ITableRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\ITableRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\ITableRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\interface\\ITableRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:43:50.028Z"
+              "WhenOpened": "2026-06-28T16:35:06.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "OrderStatus.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderStatus.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderStatus.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderStatus.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\OrderStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Title": "ITableService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T09:08:29.382Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:29:22.016Z"
+              "WhenOpened": "2026-06-28T15:22:34.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "TableController.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\TableController.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\TableController.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\TableController.cs",
-              "RelativeToolTip": "WebApplication3\\Controllers\\TableController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAACEAAAAlAAAAAAAAAA==",
+              "Title": "OrderItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:02:37.358Z"
+              "WhenOpened": "2026-06-28T15:23:11.045Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "OrderTable.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderTable.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderTable.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderTable.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderTable.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderTable.cs",
               "RelativeToolTip": "WebApplication3\\Models\\OrderTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:54:10.187Z"
+              "WhenOpened": "2026-06-28T12:26:55.9Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Table\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Table\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Table\\Index.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Table\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-21T08:02:56.553Z"
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderItem.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T10:20:38.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderDetailViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T15:22:10.124Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "OrderItemViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:28.083Z"
+              "Title": "TestOrderItems.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-28T15:51:36.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "OrderListViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\OrderListViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\MenuItem.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\MenuItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\MenuItem.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\MenuItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:25:21.483Z"
+              "WhenOpened": "2026-06-28T12:13:48.126Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
-              "Title": "PersonOrderViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\PersonOrderViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Program.cs",
+              "RelativeToolTip": "WebApplication3\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAuwEcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:13.552Z"
+              "WhenOpened": "2026-06-28T12:51:50.709Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "TableViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\TableViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Title": "TableService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\TableService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\TableService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\TableService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\TableService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowCIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T15:44:49.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderItem.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderItem.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\OrderItem.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA1wCwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:06:08.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "PersonOrder.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\PersonOrder.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\PersonOrder.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\PersonOrder.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\PersonOrder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:59:59.695Z"
+              "WhenOpened": "2026-06-14T21:23:10.961Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "RestaurantTable.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\RestaurantTable.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\RestaurantTable.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\RestaurantTable.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\RestaurantTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Title": "ItemCategory.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ItemCategory.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ItemCategory.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ItemCategory.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ItemCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:04:58.963Z"
+              "WhenOpened": "2026-06-28T15:26:41.591Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "TableStatus.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\TableStatus.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\TableStatus.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\TableStatus.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\TableStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Title": "MenuViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\MenuViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\MenuViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\MenuViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\MenuViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:04:40.56Z"
+              "WhenOpened": "2026-06-28T15:23:08.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WaiterController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\WaiterController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\WaiterController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\WaiterController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\WaiterController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwBgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T13:12:25.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\waiter\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\waiter\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\waiter\\Index.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\waiter\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-28T13:17:18.998Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\LoginModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAJAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowEQAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:35:17.688Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ItemCategory.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ItemCategory.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ItemCategory.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ItemCategory.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ItemCategory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T13:35:27.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:20:43.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "EmployeeService.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\EmployeeService.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Services\\EmployeeService.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\EmployeeService.cs",
-              "RelativeToolTip": "WebApplication3\\Services\\EmployeeService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwD4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:39:52.817Z"
+              "WhenOpened": "2026-06-14T20:40:33.096Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAFoAAAAHAAAAAAAAAA==",
+              "Title": "SessionHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\helper\\SessionHelper.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\helper\\SessionHelper.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\helper\\SessionHelper.cs",
+              "RelativeToolTip": "WebApplication3\\helper\\SessionHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T20:39:59.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Table\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Table\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Views\\Table\\Index.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Table\\Index.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwC8AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-19T13:13:23.467Z"
+              "WhenOpened": "2026-06-28T13:52:53.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "WaiterOrderViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\WaiterOrderViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\WaiterOrderViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\WaiterOrderViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\WaiterOrderViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T13:57:08.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "TakeOrderViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\TakeOrderViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\TakeOrderViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\TakeOrderViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\TakeOrderViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:13:38.266Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 37,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
-              "RelativeToolTip": "WebApplication3\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDsAAAATAAAAAAAAAA==",
+              "Title": "RestaurantTable.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\RestaurantTable.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\RestaurantTable.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\RestaurantTable.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\RestaurantTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:20:58.989Z"
+              "WhenOpened": "2026-06-28T13:19:31.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 38,
-              "Title": "ITableRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\ITableRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\ITableRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\ITableRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\interface\\ITableRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAApAAAAAAAAAA==",
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderStatus.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\OrderStatus.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T08:05:18.056Z"
+              "WhenOpened": "2026-06-28T12:27:25.3Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "PasswordHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\helper\\PasswordHelper.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\helper\\PasswordHelper.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\helper\\PasswordHelper.cs",
-              "RelativeToolTip": "WebApplication3\\helper\\PasswordHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
+              "Title": "WaiterDashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\WaiterDashboardViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\WaiterDashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Models\\ViewModels\\WaiterDashboardViewModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\ViewModels\\WaiterDashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:07:54.486Z"
+              "WhenOpened": "2026-06-28T13:15:58.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "UsersRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\UsersRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\UsersRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\UsersRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\UsersRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAiAAAAAAAAAA==",
+              "Title": "IMenuItemService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IMenuItemService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IMenuItemService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\Interfaces\\IMenuItemService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\Interfaces\\IMenuItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T07:50:05.686Z"
+              "WhenOpened": "2026-06-28T13:03:11.687Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\appsettings.json",
-              "RelativeToolTip": "WebApplication3\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-13T10:53:18.491Z"
+              "Title": "MenuItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\MenuItemRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\MenuItemRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\MenuItemRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\MenuItemRepository.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:32:21.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "IPersonOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IPersonOrderRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IPersonOrderRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IPersonOrderRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\interface\\IPersonOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Title": "IMenuRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IMenuRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IMenuRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\interface\\IMenuRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\interface\\IMenuRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:54:33.709Z"
+              "WhenOpened": "2026-06-28T12:31:22.149Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "IUsersRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IUsersRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IUsersRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IUsersRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\interface\\IUsersRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\UsersRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\repo\\UsersRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\UsersRepository.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:54:35.324Z"
+              "WhenOpened": "2026-06-14T21:33:20.481Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\User.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\User.cs",
-              "RelativeToolTip": "WebApplication3\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAbAAAAAAAAAA==",
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Services\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4-main\\WebApplication3\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "WebApplication3\\Services\\EmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T12:51:17.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-29T07:51:41.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-19T13:10:42.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Employees\\Create.cshtml",
-              "RelativeDocumentMoniker": "WebApplication3\\Views\\Employees\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Employees\\Create.cshtml",
-              "RelativeToolTip": "WebApplication3\\Views\\Employees\\Create.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwD0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-19T13:29:06.19Z"
+              "WhenOpened": "2026-06-14T21:21:27.375Z"
             }
           ]
         }

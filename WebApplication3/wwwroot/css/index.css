@@ -1,0 +1,73 @@
+﻿.order-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.order-card {
+    width: 220px;
+    border: 3px solid #ccc;
+    border-radius: 12px;
+    background: white;
+    transition: 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+    .order-card:hover {
+        transform: scale(1.03);
+    }
+
+.order-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 20px;
+}
+
+.order-text {
+    text-align: center;
+}
+
+.reopen-form {
+    padding: 0 20px 15px 20px;
+    text-align: center;
+}
+
+.reopen-btn {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.ordered {
+    border-color: gray;
+}
+
+.preparing {
+    border-color: orange;
+}
+
+.ready {
+    border-color: limegreen;
+    background-color: #f1fff1;
+}
+
+.served {
+    border-color: dodgerblue;
+    opacity: 0.8;
+}
+
+.cancelled {
+    border-color: red;
+    opacity: 0.7;
+}
+
+.closed {
+    opacity: 0.6;
+}
+
+.ready:hover {
+    box-shadow: 0 0 15px rgba(50,205,50,0.4);
+}

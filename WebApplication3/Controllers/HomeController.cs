@@ -15,7 +15,10 @@ namespace WebApplication3.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+                return RedirectToAction("Login", "Account");
+
+            return RedirectToAction("Index", "Table");
         }
 
         public IActionResult Privacy()

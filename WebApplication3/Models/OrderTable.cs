@@ -1,25 +1,25 @@
 ﻿namespace WebApplication3.Models
-{
-
+{ 
     public class OrderTable
     {
         public int TableOrderID { get; set; }
         public int TableNumber { get; set; }
         public decimal TotalPrice { get; set; }
         public int PaymentID { get; set; }
-        public OrderStatus OrderStatus { get; set; }
+        public OrderStatus orderStatus { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ClosedAt { get; set; }
 
-        public List<PersonOrder> PersonOrders { get; set; } = new();
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+        public bool IsClosed => ClosedAt != null;
+
+        public decimal CalculateTotal() => OrderItems.Sum(i => i.LineTotal);
+
         public void Close()
         {
             ClosedAt = DateTime.Now;
-        }
-
-        public bool isClossed() 
-        {
-            return ClosedAt is null;
+            orderStatus = OrderStatus.Served;
         }
     }
 }

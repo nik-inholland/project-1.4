@@ -1,7 +1,25 @@
 ﻿@model List<WebApplication3.Models.ViewModels.TableViewModel>
 @using WebApplication3.Models
+@{
+    ViewData["Title"] = "Restaurant Tables";
+}
 
 <h2>Restaurant Tables</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
 
 <div class="table-grid">
     @foreach (var table in Model)
@@ -10,15 +28,28 @@
         ? "/images/table-free.png"
         : "/images/table-occupied.png";
 
-        <form asp-action="ToggleStatus" asp-route-id="@table.TableID" method="post" class="table-card-form">
-            <button type="submit" class="table-card">
-                <img src="@imagePath" alt="Table" />
-                <div class="table-text">
-                    <h3>Table @table.TableID</h3>
-                    <p>Status: <strong>@table.Occupied</strong></p>
-                </div>
-            </button>
-        </form>
+        <div class="table-card">
+            <img src="@imagePath" alt="Table" />
+            <div class="table-text">
+                <h3>Table @table.TableID</h3>
+                <p>Status: <strong>@table.Occupied</strong></p>
+
+                <!-- Take Order button -->
+                <a asp-controller="Order" asp-action="TakeOrder"
+                   asp-route-tableNumber="@table.TableID"
+                   class="btn btn-sm @(table.Occupied == TableStatus.Free ? "btn-primary" : "btn-warning") w-100 mb-2">
+                    @(table.Occupied == TableStatus.Free ? "📝 Take Order" : "➕ Add Order")
+                </a>
+
+                <!-- Toggle status button -->
+                <form asp-action="ToggleStatus" asp-route-id="@table.TableID" method="post">
+                    <button type="submit" class="btn btn-sm w-100 @(table.Occupied == TableStatus.Free ? "btn-outline-danger" : "btn-outline-success")"
+                            onclick="return confirm('Change status of Table @table.TableID?')">
+                        @(table.Occupied == TableStatus.Free ? "🔴 Mark Occupied" : "✅ Mark Free")
+                    </button>
+                </form>
+            </div>
+        </div>
     }
 </div>
 
@@ -31,27 +62,13 @@
         margin-top: 20px;
     }
 
-    .table-card-form {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        border: none;
-        background: none;
-    }
-
     .table-card {
         width: 220px;
-        cursor: pointer;
-        font-family: inherit;
-        font-size: inherit;
-        text-decoration: none;
-        color: black;
         border: 2px solid #ccc;
         border-radius: 12px;
         overflow: hidden;
         background: white;
         transition: 0.2s ease;
-        padding: 0;
         text-align: center;
     }
 
@@ -62,7 +79,7 @@
 
         .table-card img {
             width: 100%;
-            height: 180px;
+            height: 150px;
             object-fit: cover;
         }
 

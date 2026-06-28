@@ -1,0 +1,31 @@
+﻿@model List<WebApplication3.Models.OrderItem>
+
+<h2>Test: Raw Order Items for Order #@Context.Request.Query["id"]</h2>
+
+@if (Model == null || Model.Count == 0)
+{
+    <p>No items returned from repository.</p>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <th>OrderItemID</th>
+            <th>ItemName</th>
+            <th>Quantity</th>
+            <th>Comments</th>
+            <th>Status</th>
+            <th>PlacedAt</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderItemID</td>
+                <td>@item.Quantity</td>
+                <td>@item.Comments</td>
+                <td>@item.itemStatus</td>
+                <td>@item.PlacedAt.ToString("HH:mm")</td>
+            </tr>
+        }
+    </table>
+}

@@ -24,6 +24,7 @@ namespace WebApplication3.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
             try
@@ -58,6 +59,7 @@ namespace WebApplication3.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             try

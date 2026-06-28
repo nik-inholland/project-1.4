@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using WebApplication3.repo;
 using WebApplication3.repo.@interface;
 using WebApplication3.Services;
+using WebApplication3.Services.@interface;
 using WebApplication3.Services.Interfaces;
 
 namespace WebApplication3
@@ -13,19 +14,24 @@ namespace WebApplication3
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddMemoryCache();
 
             // --- Repositories ---
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IPersonOrderRepository, PersonOrderRepository>();
+            builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>();
             builder.Services.AddScoped<ITableRepository, TableRepository>();
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
+            // ordering repos
+            builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+            builder.Services.AddScoped<IMenuService, MenuService>();
+
             // --- Services ---
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+            builder.Services.AddScoped<IMenuItemService, MenuItemService>();
             builder.Services.AddScoped<ITableService, TableService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IPersonOrderService, PersonOrderService>();
-
+           
             // --- Authentication (Cookie) ---
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
