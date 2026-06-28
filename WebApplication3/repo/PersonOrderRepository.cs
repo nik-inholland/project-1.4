@@ -101,18 +101,26 @@ namespace WebApplication3.repo
 
         private OrderItem ReadOrderItem(SqlDataReader reader)
         {
+            var menuItem = new MenuItem
+            {
+                MenuItemID = GetInt(reader, "MenuItemID"),
+                Description = GetString(reader, "itemName") ?? "",
+                Price = GetDecimal(reader, "PricePerItem"),
+                VatCategory = reader["vat_category"] != DBNull.Value && (bool)reader["vat_category"],
+                CourseType = GetInt(reader, "Category"),
+                QuantityInStock = GetInt(reader, "StockQuantity")
+            };
+
             return new OrderItem
             {
                 OrderItemID = GetInt(reader, "OrderItemID"),
-                Name = GetString(reader, "itemName"),
-                Comments = GetString(reader, "Comments"),
-                Price = (double)GetDecimal(reader, "PricePerItem"),
-                VatCategory = reader["vat_category"] != DBNull.Value && (bool)reader["vat_category"],
-                Category = GetInt(reader, "Category"),
+                OrderID = GetInt(reader, "OrderID"),
+                MenuItemID = menuItem.MenuItemID,
+                MenuItem = menuItem,
                 Quantity = GetInt(reader, "Quantity"),
-                MenuItemId = GetInt(reader, "MenuItemId"),
-                PlacedAt = (DateTime)reader["TimePlaced"],
-                PersonOrderId = GetInt(reader, "PersonOrderId")
+                Comments = GetString(reader, "Comments"),
+                itemStatus = (OrderStatus)GetInt(reader, "ItemStatus"),
+                PlacedAt = (DateTime)reader["TimePlaced"]
             };
         }
     }

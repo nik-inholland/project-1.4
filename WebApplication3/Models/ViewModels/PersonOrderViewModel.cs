@@ -6,6 +6,6 @@
         public string PersonName { get; set; }
         public OrderStatus Status { get; set; }
         public decimal TotalPrice { get; set; }
-        public List<OrderItemViewModel> Items { get; set; } = new();
+        public List<OrderItemDetailViewModel> Items { get; set; } = new();
     }
 }
