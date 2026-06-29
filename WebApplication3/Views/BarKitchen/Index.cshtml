@@ -1,0 +1,386 @@
+﻿@model List<WebApplication3.Models.OrderTable>
+
+@{
+    ViewData["Title"] = "Bar / Kitchen Orders";
+
+    bool isFinishedMode =
+        ViewBag.Mode != null &&
+        ViewBag.Mode.ToString() == "Finished";
+
+    string station =
+        ViewBag.Station == null
+            ? "Kitchen"
+            : ViewBag.Station.ToString();
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2>
+            <i class="bi bi-shop"></i>
+            @station Orders
+        </h2>
+
+        @if (isFinishedMode)
+        {
+            <p class="text-muted">
+                <strong>Finished orders of today</strong>
+            </p>
+        }
+        else
+        {
+            <p class="text-muted">
+                <strong>Running orders with ordered items</strong>
+            </p>
+        }
+    </div>
+
+    <form asp-controller="BarKitchen"
+          asp-action="ResetAllRunningItemsStatus"
+          method="post">
+
+        <input type="hidden"
+               name="station"
+               value="@station" />
+
+        <button type="submit"
+                class="btn btn-warning">
+            Refresh
+        </button>
+    </form>
+</div>
+
+<div class="mb-3">
+    <a class="btn btn-dark"
+       asp-controller="BarKitchen"
+       asp-action="@station">
+        Running Orders
+    </a>
+
+    <a class="btn btn-secondary"
+       asp-controller="BarKitchen"
+       asp-action="Finished"
+       asp-route-station="@station">
+        Finished Today
+    </a>
+</div>
+
+<div class="mb-4">
+    <a class="btn btn-primary"
+       asp-controller="BarKitchen"
+       asp-action="Bar">
+        BAR
+    </a>
+
+    <a class="btn btn-success"
+       asp-controller="BarKitchen"
+       asp-action="Kitchen">
+        KITCHEN
+    </a>
+</div>
+
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-success">
+        No orders found.
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var order in Model)
+        {
+            var groups = station == "Bar"
+            ? new[]
+            {
+        new { Name = "Drinks", Items = order.Drinks }
+            }
+            : new[]
+            {
+        new { Name = "Starters", Items = order.Starters },
+        new { Name = "Mains", Items = order.Mains },
+        new { Name = "Desserts", Items = order.Desserts }
+            };
+
+            var visibleItems =
+            groups.SelectMany(group => group.Items).ToList();
+
+            if (!visibleItems.Any())
+            {
+                continue;
+            }
+
+            var orderStatus = WebApplication3.Models.OrderStatus.Ordered;
+
+            if (visibleItems.All(i => i.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed))
+            {
+                orderStatus = WebApplication3.Models.OrderStatus.ReadyToBeServed;
+            }
+            else if (visibleItems.Any(i =>
+            i.ItemStatus == WebApplication3.Models.OrderStatus.BeingPrepared ||
+            i.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed))
+            {
+                orderStatus = WebApplication3.Models.OrderStatus.BeingPrepared;
+            }
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-table"></i>
+                            Table @order.TableID
+                        </h5>
+                    </div>
+
+                    <div class="card-body order-info">
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            <strong>Order Time:</strong>
+                            @order.OrderDateTime.ToString("HH:mm")
+                        </p>
+
+                        <p>
+                            <i class="bi bi-hourglass-split text-warning"></i>
+                            <strong>Waiting Time:</strong>
+                            @order.WaitingTimeText
+                        </p>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            <strong>Status:</strong>
+
+                            @if (orderStatus == WebApplication3.Models.OrderStatus.Ordered)
+                            {
+                                <span class="badge bg-secondary">Ordered</span>
+                            }
+                            else if (orderStatus == WebApplication3.Models.OrderStatus.BeingPrepared)
+                            {
+                                <span class="badge bg-warning text-dark">Being Prepared</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">Ready To Be Served</span>
+                            }
+                        </p>
+
+                        @if (!isFinishedMode)
+                        {
+                            <form asp-controller="BarKitchen"
+                                  asp-action="ChangeMultipleOrderItemsStatus"
+                                  method="post"
+                                  class="mb-3">
+
+                                <input type="hidden"
+                                       name="tableOrderId"
+                                       value="@order.TableOrderID" />
+
+                                <input type="hidden"
+                                       name="station"
+                                       value="@station" />
+
+                                @foreach (var item in visibleItems)
+                                {
+                                    <input type="hidden"
+                                           name="orderItemIds"
+                                           value="@item.OrderItemID" />
+                                }
+
+                                @if (orderStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                {
+                                    <button class="btn btn-warning btn-sm w-100"
+                                            name="status"
+                                            value="BeingPrepared">
+                                        Whole Order Being Prepared
+                                    </button>
+                                }
+
+                                @if (orderStatus == WebApplication3.Models.OrderStatus.BeingPrepared)
+                                {
+                                    <button class="btn btn-success btn-sm w-100"
+                                            name="status"
+                                            value="ReadyToBeServed">
+                                        Whole Order Ready To Be Served
+                                    </button>
+                                }
+
+                                @if (orderStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                                {
+                                    <button class="btn btn-success btn-sm w-100" disabled>
+                                        Whole Order Ready To Be Served
+                                    </button>
+                                }
+                            </form>
+                        }
+
+                        <hr />
+
+                        @foreach (var group in groups)
+                        {
+                            if (group.Items.Any())
+                            {
+                                var courseStatus = WebApplication3.Models.OrderStatus.Ordered;
+
+                                if (group.Items.All(i => i.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed))
+                                {
+                                    courseStatus = WebApplication3.Models.OrderStatus.ReadyToBeServed;
+                                }
+                                else if (group.Items.Any(i =>
+                                i.ItemStatus == WebApplication3.Models.OrderStatus.BeingPrepared ||
+                                i.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed))
+                                {
+                                    courseStatus = WebApplication3.Models.OrderStatus.BeingPrepared;
+                                }
+
+                                <div class="mb-3">
+                                    @if (group.Name == "Drinks")
+                                    {
+                                        <h6 class="course-title text-primary">🍹 Drinks</h6>
+                                    }
+                                    else if (group.Name == "Starters")
+                                    {
+                                        <h6 class="course-title text-success">🥗 Starters</h6>
+                                    }
+                                    else if (group.Name == "Mains")
+                                    {
+                                        <h6 class="course-title text-success">🥩 Mains</h6>
+                                    }
+                                    else
+                                    {
+                                        <h6 class="course-title text-success">🍰 Desserts</h6>
+                                    }
+
+                                    @if (!isFinishedMode && station == "Kitchen")
+                                    {
+                                        <form asp-controller="BarKitchen"
+                                              asp-action="ChangeMultipleOrderItemsStatus"
+                                              method="post"
+                                              class="mb-2">
+
+                                            <input type="hidden"
+                                                   name="tableOrderId"
+                                                   value="@order.TableOrderID" />
+
+                                            <input type="hidden"
+                                                   name="station"
+                                                   value="@station" />
+
+                                            @foreach (var item in group.Items)
+                                            {
+                                                <input type="hidden"
+                                                       name="orderItemIds"
+                                                       value="@item.OrderItemID" />
+                                            }
+
+                                            @if (courseStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                            {
+                                                <button class="btn btn-outline-warning btn-sm w-100"
+                                                        name="status"
+                                                        value="BeingPrepared">
+                                                    @group.Name Being Prepared
+                                                </button>
+                                            }
+
+                                            @if (courseStatus == WebApplication3.Models.OrderStatus.BeingPrepared)
+                                            {
+                                                <button class="btn btn-outline-success btn-sm w-100"
+                                                        name="status"
+                                                        value="ReadyToBeServed">
+                                                    @group.Name Ready To Be Served
+                                                </button>
+                                            }
+
+                                            @if (courseStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                                            {
+                                                <button class="btn btn-success btn-sm w-100" disabled>
+                                                    @group.Name Ready To Be Served
+                                                </button>
+                                            }
+                                        </form>
+                                    }
+
+                                    <ul class="list-group">
+                                        @foreach (var item in group.Items)
+                                        {
+                                            <li class="list-group-item">
+                                                <strong>
+                                                    @item.Quantity x @item.Description
+                                                </strong>
+
+                                                @if (!string.IsNullOrEmpty(item.Comment))
+                                                {
+                                                    <div class="text-muted">
+                                                        Comment: @item.Comment
+                                                    </div>
+                                                }
+
+                                                <div class="mt-1">
+                                                    Status:
+                                                    @if (item.ItemStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                                    {
+                                                        <span class="badge bg-secondary">Ordered</span>
+                                                    }
+                                                    else if (item.ItemStatus == WebApplication3.Models.OrderStatus.BeingPrepared)
+                                                    {
+                                                        <span class="badge bg-warning text-dark">Being Prepared</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge bg-success">Ready To Be Served</span>
+                                                    }
+                                                </div>
+
+                                                @if (!isFinishedMode)
+                                                {
+                                                    <form asp-controller="BarKitchen"
+                                                          asp-action="ChangeOrderItemStatus"
+                                                          method="post"
+                                                          class="mt-2">
+
+                                                        <input type="hidden"
+                                                               name="orderItemId"
+                                                               value="@item.OrderItemID" />
+
+                                                        <input type="hidden"
+                                                               name="station"
+                                                               value="@station" />
+
+                                                        @if (item.ItemStatus == WebApplication3.Models.OrderStatus.Ordered)
+                                                        {
+                                                            <button class="btn btn-outline-warning btn-sm w-100"
+                                                                    name="status"
+                                                                    value="BeingPrepared">
+                                                                Being Prepared
+                                                            </button>
+                                                        }
+
+                                                        @if (item.ItemStatus == WebApplication3.Models.OrderStatus.BeingPrepared)
+                                                        {
+                                                            <button class="btn btn-outline-success btn-sm w-100"
+                                                                    name="status"
+                                                                    value="ReadyToBeServed">
+                                                                Ready To Be Served
+                                                            </button>
+                                                        }
+
+                                                        @if (item.ItemStatus == WebApplication3.Models.OrderStatus.ReadyToBeServed)
+                                                        {
+                                                            <button class="btn btn-success btn-sm w-100"
+                                                                    disabled>
+                                                                Ready To Be Served
+                                                            </button>
+                                                        }
+                                                    </form>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+}
