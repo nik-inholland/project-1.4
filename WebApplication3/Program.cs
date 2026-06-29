@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 using WebApplication3.repo;
 using WebApplication3.repo.@interface;
 using WebApplication3.Services;
@@ -15,6 +16,10 @@ namespace WebApplication3
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddMemoryCache();
+            var keysDirectory = Path.Combine(Directory.GetCurrentDirectory(), "temp-keys");
+            builder.Services.AddDataProtection()
+                .PersistKeysToFileSystem(new DirectoryInfo(keysDirectory))
+                .SetApplicationName("RestaurantApp");
 
             // --- Repositories ---
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -119,10 +123,6 @@
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|c:\\users\\gebruiker\\documents\\github2\\project-1.4\\webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD0DB23-70C8-43B6-95E4-2F7FC46F5475}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -194,19 +194,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\repo\\OrderRepository.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
-              "RelativeToolTip": "WebApplication3\\repo\\OrderRepository.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAADgvy4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T12:34:53.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Index.cshtml",
@@ -218,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\AccountController.cs",
@@ -230,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SessionHelper.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\helper\\SessionHelper.cs",
               "RelativeDocumentMoniker": "WebApplication3\\helper\\SessionHelper.cs",
@@ -242,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\waiter\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\waiter\\Index.cshtml",
@@ -254,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\OrderController.cs",
@@ -266,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IOrderService.cs",
@@ -278,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TableRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\TableRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\TableRepository.cs",
@@ -290,20 +278,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\OrderService.cs",
               "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\OrderService.cs",
               "RelativeToolTip": "WebApplication3\\Services\\OrderService.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAADwv6cAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAADwv6YAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-14T21:22:53.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
+              "RelativeToolTip": "WebApplication3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:51:50.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\repo\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\OrderRepository.cs",
+              "RelativeToolTip": "WebApplication3\\repo\\OrderRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAADgvy4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T12:34:53.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Details.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Details.cshtml",
@@ -315,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "MenuItemService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\MenuItemService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\MenuItemService.cs",
@@ -327,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "MenuService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\MenuService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\MenuService.cs",
@@ -339,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "MenuRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\MenuRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\MenuRepository.cs",
@@ -351,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "TakeOrder.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\TakeOrder.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\TakeOrder.cshtml",
@@ -363,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\wwwroot\\css\\index.css",
               "RelativeDocumentMoniker": "WebApplication3\\wwwroot\\css\\index.css",
@@ -375,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Menu.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\Menu.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\Menu.cshtml",
@@ -387,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IMenuItemRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IMenuItemRepository.cs",
@@ -399,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TableController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\TableController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\TableController.cs",
@@ -411,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IMenuService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\IMenuService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\IMenuService.cs",
@@ -423,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Controllers\\HomeController.cs",
@@ -435,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\IOrderRepository.cs",
@@ -447,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ITableRepository.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\repo\\interface\\ITableRepository.cs",
               "RelativeDocumentMoniker": "WebApplication3\\repo\\interface\\ITableRepository.cs",
@@ -459,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ITableService.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Services\\Interfaces\\ITableService.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Services\\Interfaces\\ITableService.cs",
@@ -471,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "OrderItemViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderItemViewModel.cs",
@@ -483,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "OrderTable.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderTable.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderTable.cs",
@@ -495,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\OrderItem.cs",
@@ -507,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "OrderDetailViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\ViewModels\\OrderDetailViewModel.cs",
@@ -519,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "TestOrderItems.cshtml",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
               "RelativeDocumentMoniker": "WebApplication3\\Views\\Order\\TestOrderItems.cshtml",
@@ -531,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "MenuItem.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Models\\MenuItem.cs",
               "RelativeDocumentMoniker": "WebApplication3\\Models\\MenuItem.cs",
@@ -540,18 +553,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T12:13:48.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
-              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub2\\project-1.4\\WebApplication3\\Program.cs",
-              "RelativeToolTip": "WebApplication3\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAuwEcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T12:51:50.709Z"
             },
             {
               "$type": "Document",
