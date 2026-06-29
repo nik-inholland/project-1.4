@@ -13,14 +13,12 @@ namespace WebApplication3.Services
             _repo = repo;
         }
 
-        public OrderTable? GetOrder(int id)
+        public OrderTable GetOrder(int id)
         {
             var order = _repo.GetById(id);
 
             if (order == null)
-            {
                 return null;
-            }
 
             order.PersonOrders =
                 _repo.GetPersonOrdersByTableId(id);
@@ -58,26 +56,22 @@ namespace WebApplication3.Services
         public List<OrderTable> GetFinishedOrdersTodayWithItems()
         {
             var orders = _repo.GetFinishedOrdersToday();
-
-            List<OrderTable> finishedOrders = new();
-
             foreach (var order in orders)
             {
-                var items =
-                    _repo.GetOrderItemsByOrderId(order.TableOrderID);
-
                 order.OrderItems =
-                    items
-                    .Where(item => item.ItemStatus == OrderStatus.ReadyToBeServed)
-                    .ToList();
-
-                if (order.OrderItems.Any())
-                {
-                    finishedOrders.Add(order);
-                }
+                    _repo.GetOrderItemsByOrderId(
+                        order.TableOrderID);
             }
+            return orders;
+        }
 
-            return finishedOrders;
+        public void ChangeOrderStatus(
+            int orderId,
+            OrderStatus status)
+        {
+            _repo.UpdateOrderStatus(
+                orderId,
+                (int)status);
         }
 
         public void ChangeOrderItemStatus(
@@ -89,27 +83,55 @@ namespace WebApplication3.Services
                 (int)status);
         }
 
-        public void ResetVisibleItemsStatus(
-     List<int> orderItemIds)
-        {
-            foreach (int orderItemId in orderItemIds)
-            {
-                _repo.UpdateOrderItemStatus(
-                    orderItemId,
-                    (int)OrderStatus.Ordered);
-            }
-        }
-
-        public void ChangeMultipleOrderItemsStatus(
-            List<int> orderItemIds,
+        public void ChangeCourseStatus(
+            int tableOrderId,
+            int courseType,
             OrderStatus status)
         {
-            foreach (int orderItemId in orderItemIds)
+            _repo.UpdateCourseStatus(
+                tableOrderId,
+                courseType,
+                (int)status);
+        }
+
+        public void ChangePersonOrderStatus(
+            int personOrderId,
+            OrderStatus status)
+        {
+            _repo.UpdatePersonOrderStatus(
+                personOrderId,
+                (int)status);
+        }
+
+        public void MarkPersonAsServed(int personOrderId)
+        {
+            var orders = _repo.GetAll();
+
+            PersonOrder target = null;
+
+            foreach (var order in orders)
             {
-                _repo.UpdateOrderItemStatus(
-                    orderItemId,
-                    (int)status);
+                var persons =
+                    _repo.GetPersonOrdersByTableId(
+                        order.TableOrderID);
+
+                target =
+                    persons.FirstOrDefault(
+                        p => p.PersonOrderID == personOrderId);
+
+                if (target != null)
+                    break;
             }
+
+            if (target == null)
+                return;
+
+            if (target.OrderStatus != OrderStatus.ReadyToBeServed)
+                return;
+
+            _repo.UpdatePersonOrderStatus(
+                personOrderId,
+                (int)OrderStatus.Served);
         }
     }
 }

@@ -27,13 +27,7 @@ namespace WebApplication3.Models
             get
             {
                 return OrderItems
-                    .Where(item =>
-                        item.CourseType == 8 ||
-                        item.CourseType == 9 ||
-                        item.CourseType == 10 ||
-                        item.CourseType == 11 ||
-                        item.CourseType == 12 ||
-                        item.CourseType == 13)
+                    .Where(item => item.CourseType == 0)
                     .ToList();
             }
         }
@@ -43,10 +37,7 @@ namespace WebApplication3.Models
             get
             {
                 return OrderItems
-                    .Where(item =>
-                        item.CourseType == 1 ||
-                        item.CourseType == 4 ||
-                        item.CourseType == 5)
+                    .Where(item => item.CourseType == 1)
                     .ToList();
             }
         }
@@ -56,9 +47,7 @@ namespace WebApplication3.Models
             get
             {
                 return OrderItems
-                    .Where(item =>
-                        item.CourseType == 2 ||
-                        item.CourseType == 6)
+                    .Where(item => item.CourseType == 2)
                     .ToList();
             }
         }
@@ -68,9 +57,7 @@ namespace WebApplication3.Models
             get
             {
                 return OrderItems
-                    .Where(item =>
-                        item.CourseType == 3 ||
-                        item.CourseType == 7)
+                    .Where(item => item.CourseType == 3)
                     .ToList();
             }
         }

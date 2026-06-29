@@ -10,9 +10,7 @@ namespace WebApplication3.repo
         public OrderRepository(IConfiguration configuration)
         {
             _connectionString =
-                configuration.GetConnectionString("DefaultConnection")
-                ?? throw new InvalidOperationException(
-                    "Connection string 'DefaultConnection' was not found.");
+                configuration.GetConnectionString("DefaultConnection");
         }
 
         public OrderTable? GetById(int id)
@@ -121,45 +119,6 @@ namespace WebApplication3.repo
             return orders;
         }
 
-        public List<OrderTable> GetFinishedOrdersToday()
-        {
-            List<OrderTable> orders = new();
-
-            using SqlConnection connection =
-                new SqlConnection(_connectionString);
-
-            string query =
-                @"SELECT TableOrderID,
-                         TableNumber,
-                         TotalPrice,
-                         PaymentID,
-                         OrderStatus,
-                         CreatedAt
-                  FROM TableOrder
-                  WHERE OrderStatus = @served
-                  AND CAST(CreatedAt AS DATE) = CAST(GETDATE() AS DATE)
-                  ORDER BY CreatedAt DESC";
-
-            SqlCommand command =
-                new SqlCommand(query, connection);
-
-            command.Parameters.AddWithValue(
-                "@served",
-                (int)OrderStatus.Served);
-
-            connection.Open();
-
-            SqlDataReader reader =
-                command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                orders.Add(ReadOrder(reader));
-            }
-
-            return orders;
-        }
-
         public List<PersonOrder> GetPersonOrdersByTableId(int tableOrderId)
         {
             List<PersonOrder> persons = new();
@@ -204,26 +163,24 @@ namespace WebApplication3.repo
                 new SqlConnection(_connectionString);
 
             string query =
-                @"SELECT oi.OrderItemID,
-                         oi.tableNumber,
-                         oi.menuItemID,
-                         oi.itemName,
-                         mi.price,
-                         mi.vat_category,
-                         mi.course_type,
-                         oi.Quantity,
-                         oi.Comments,
-                         oi.ItemStatus
-                  FROM OrderItems oi
-                  JOIN MenuItem mi
-                  ON oi.menuItemID = mi.menuItemID
-                  WHERE oi.tableNumber =
+                @"SELECT OrderItemID,
+                         PersonOrderID,
+                         menuItemID,
+                         itemName,
+                         PricePerItem,
+                         vat_category,
+                         Category,
+                         Quantity,
+                         Comments,
+                         ItemStatus
+                  FROM OrderItems
+                  WHERE PersonOrderID IN
                   (
-                      SELECT TableNumber
-                      FROM TableOrder
+                      SELECT PersonOrderID
+                      FROM PersonOrder
                       WHERE TableOrderID = @tableOrderId
                   )
-                  ORDER BY mi.course_type, oi.itemName";
+                  ORDER BY Category, itemName";
 
             SqlCommand command =
                 new SqlCommand(query, connection);
@@ -245,6 +202,87 @@ namespace WebApplication3.repo
             return items;
         }
 
+        public List<OrderTable> GetFinishedOrdersToday()
+        {
+            List<OrderTable> orders = new();
+
+            using SqlConnection connection =
+                new SqlConnection(_connectionString);
+
+            string query =
+                @"SELECT TableOrderID,
+                 TableNumber,
+                 TotalPrice,
+                 PaymentID,
+                 OrderStatus,
+                 CreatedAt
+          FROM TableOrder
+          WHERE OrderStatus = @served
+          AND CAST(CreatedAt AS DATE) = CAST(GETDATE() AS DATE)
+          ORDER BY CreatedAt DESC";
+
+            SqlCommand command =
+                new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue(
+                "@served",
+                (int)OrderStatus.Served);
+
+            connection.Open();
+
+            SqlDataReader reader =
+                command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                orders.Add(ReadOrder(reader));
+            }
+
+            return orders;
+        }
+
+        public void UpdateOrderStatus(int orderId, int status)
+        {
+            using SqlConnection connection =
+                new SqlConnection(_connectionString);
+
+            string query =
+                @"UPDATE TableOrder
+                  SET OrderStatus = @status
+                  WHERE TableOrderID = @id";
+
+            SqlCommand command =
+                new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@status", status);
+            command.Parameters.AddWithValue("@id", orderId);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdatePersonOrderStatus(int personOrderId, int status)
+        {
+            using SqlConnection connection =
+                new SqlConnection(_connectionString);
+
+            string query =
+                @"UPDATE PersonOrder
+                  SET OrderStatus = @status
+                  WHERE PersonOrderID = @id";
+
+            SqlCommand command =
+                new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@status", status);
+            command.Parameters.AddWithValue("@id", personOrderId);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+        }
+
         public void UpdateOrderItemStatus(int orderItemId, int status)
         {
             using SqlConnection connection =
@@ -260,6 +298,34 @@ namespace WebApplication3.repo
 
             command.Parameters.AddWithValue("@status", status);
             command.Parameters.AddWithValue("@id", orderItemId);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateCourseStatus(int tableOrderId, int courseType, int status)
+        {
+            using SqlConnection connection =
+                new SqlConnection(_connectionString);
+
+            string query =
+                @"UPDATE OrderItems
+          SET ItemStatus = @status
+          WHERE Category = @courseType
+          AND PersonOrderID IN
+          (
+              SELECT PersonOrderID
+              FROM PersonOrder
+              WHERE TableOrderID = @tableOrderId
+          )";
+
+            SqlCommand command =
+                new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@status", status);
+            command.Parameters.AddWithValue("@courseType", courseType);
+            command.Parameters.AddWithValue("@tableOrderId", tableOrderId);
 
             connection.Open();
 
@@ -298,12 +364,12 @@ namespace WebApplication3.repo
             return new OrderItem
             {
                 OrderItemID = GetInt(reader, "OrderItemID"),
-                TableOrderID = GetInt(reader, "tableNumber"),
+                TableOrderID = GetInt(reader, "PersonOrderID"),
                 MenuItemID = GetInt(reader, "menuItemID"),
                 Description = GetString(reader, "itemName"),
-                Price = GetDouble(reader, "price"),
+                Price = GetDouble(reader, "PricePerItem"),
                 VatCategory = GetBool(reader, "vat_category"),
-                CourseType = GetInt(reader, "course_type"),
+                CourseType = GetInt(reader, "Category"),
                 Quantity = GetInt(reader, "Quantity"),
                 Comment = GetString(reader, "Comments"),
                 ItemStatus = (OrderStatus)GetInt(reader, "ItemStatus")
@@ -347,8 +413,8 @@ namespace WebApplication3.repo
         private string GetString(SqlDataReader reader, string column)
         {
             return reader[column] == DBNull.Value
-                ? string.Empty
-                : reader[column]?.ToString() ?? string.Empty;
+                ? ""
+                : reader[column].ToString();
         }
     }
 }

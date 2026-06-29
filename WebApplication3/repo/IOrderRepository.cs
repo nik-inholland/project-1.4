@@ -16,7 +16,12 @@ namespace WebApplication3.repo
 
         List<OrderItem> GetOrderItemsByOrderId(int tableOrderId);
 
+        void UpdateOrderStatus(int orderId, int status);
+
+        void UpdatePersonOrderStatus(int personOrderId, int status);
+
         void UpdateOrderItemStatus(int orderItemId, int status);
 
+        void UpdateCourseStatus(int tableOrderId, int courseType, int status);
     }
 }

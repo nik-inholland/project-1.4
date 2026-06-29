@@ -15,117 +15,60 @@ namespace WebApplication3.Controllers
 
         public IActionResult Index()
         {
-            return Kitchen();
-        }
-
-        public IActionResult Bar()
-        {
             ViewBag.Mode = "Running";
-            ViewBag.Station = "Bar";
 
-            var orders = _service.GetRunningOrdersWithItems();
+            var runningOrders =
+                _service.GetRunningOrdersWithItems();
 
-            return View("Index", orders);
+            return View(runningOrders);
         }
 
-        public IActionResult Kitchen()
+        [HttpPost]
+        public IActionResult ChangeOrderStatus(
+            int orderId,
+            OrderStatus status)
         {
-            ViewBag.Mode = "Running";
-            ViewBag.Station = "Kitchen";
+            _service.ChangeOrderStatus(
+                orderId,
+                status);
 
-            var orders = _service.GetRunningOrdersWithItems();
-
-            return View("Index", orders);
-        }
-
-        public IActionResult Finished(string station = "Kitchen")
-        {
-            ViewBag.Mode = "Finished";
-            ViewBag.Station = station;
-
-            var orders = _service.GetFinishedOrdersTodayWithItems();
-
-            return View("Index", orders);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult ChangeOrderItemStatus(
             int orderItemId,
-            OrderStatus status,
-            string station)
+            OrderStatus status)
         {
-            _service.ChangeOrderItemStatus(orderItemId, status);
+            _service.ChangeOrderItemStatus(
+                orderItemId,
+                status);
 
-            return RedirectToStation(station);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult ResetVisibleItemsStatus(
-    List<int> orderItemIds,
-    string station)
+        public IActionResult ChangeCourseStatus(
+            int tableOrderId,
+            int courseType,
+            OrderStatus status)
         {
-            if (orderItemIds != null && orderItemIds.Count > 0)
-            {
-                _service.ResetVisibleItemsStatus(orderItemIds);
-            }
+            _service.ChangeCourseStatus(
+                tableOrderId,
+                courseType,
+                status);
 
-            if (station == "Bar")
-                return RedirectToAction("Bar");
-
-            return RedirectToAction("Kitchen");
+            return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult ResetAllRunningItemsStatus(string station)
+        public IActionResult Finished()
         {
-            var orders = _service.GetRunningOrdersWithItems();
+            ViewBag.Mode = "Finished";
 
-            List<int> allItemIds = new();
+            var finishedOrders =
+                _service.GetFinishedOrdersTodayWithItems();
 
-            foreach (var order in orders)
-            {
-                allItemIds.AddRange(
-                    order.Drinks.Select(item => item.OrderItemID));
-
-                allItemIds.AddRange(
-                    order.Starters.Select(item => item.OrderItemID));
-
-                allItemIds.AddRange(
-                    order.Mains.Select(item => item.OrderItemID));
-
-                allItemIds.AddRange(
-                    order.Desserts.Select(item => item.OrderItemID));
-            }
-
-            _service.ResetVisibleItemsStatus(allItemIds);
-
-            if (station == "Bar")
-                return RedirectToAction("Bar");
-
-            return RedirectToAction("Kitchen");
-        }
-
-        [HttpPost]
-        public IActionResult ChangeMultipleOrderItemsStatus(
-            List<int> orderItemIds,
-            OrderStatus status,
-            string station)
-        {
-            if (orderItemIds != null && orderItemIds.Count > 0)
-            {
-                _service.ChangeMultipleOrderItemsStatus(orderItemIds, status);
-            }
-
-            return RedirectToStation(station);
-        }
-
-
-        private IActionResult RedirectToStation(string station)
-        {
-            if (station == "Bar")
-                return RedirectToAction("Bar");
-
-            return RedirectToAction("Kitchen");
+            return View("Index", finishedOrders);
         }
     }
 }

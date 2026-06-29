@@ -4,7 +4,7 @@ namespace WebApplication3.Services.Interfaces
 {
     public interface IOrderService
     {
-        OrderTable? GetOrder(int id);
+        OrderTable GetOrder(int id);
 
         List<OrderTable> GetAllOrders();
 
@@ -14,17 +14,19 @@ namespace WebApplication3.Services.Interfaces
 
         List<OrderTable> GetFinishedOrdersTodayWithItems();
 
-        void ChangeOrderItemStatus(
-            int orderItemId,
+        void ChangeOrderStatus(int orderId, OrderStatus status);
+
+        void ChangeOrderItemStatus(int orderItemId, OrderStatus status);
+
+        void ChangeCourseStatus(
+            int tableOrderId,
+            int courseType,
             OrderStatus status);
 
-        void ChangeMultipleOrderItemsStatus(
-     List<int> orderItemIds,
-     OrderStatus status); 
+        void ChangePersonOrderStatus(
+            int personOrderId,
+            OrderStatus status);
 
-        void ResetVisibleItemsStatus(
-            List<int> orderItemIds);
-
-
+        void MarkPersonAsServed(int personOrderId);
     }
 }
