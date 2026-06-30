@@ -284,11 +284,18 @@ namespace WebApplication3.repo
             conn.Open();
 
             string query = @"
-            SELECT TOP (@count) TableOrderID, TableNumber, TotalPrice, PaymentID, OrderStatus, CreatedAt, ClosedAt
-            FROM TableOrder
-            WHERE (@showClosed = 1 OR ClosedAt IS NULL)
-              AND (@dateFilter IS NULL OR CONVERT(date, CreatedAt) = @dateFilter)
-            ORDER BY CreatedAt DESC";
+        SELECT TOP (@count) TableOrderID, TableNumber, TotalPrice, PaymentID, OrderStatus, CreatedAt, ClosedAt
+        FROM TableOrder o
+        WHERE (@showClosed = 1 OR ClosedAt IS NULL)
+          AND (@dateFilter IS NULL OR CONVERT(date, CreatedAt) = @dateFilter)
+          AND EXISTS (
+              SELECT 1
+              FROM OrderItems oi
+              INNER JOIN MenuItem mi ON oi.menuItemID = mi.menuitemID
+              WHERE oi.OrderID = o.TableOrderID
+                AND mi.course_type < 8
+          )
+        ORDER BY CreatedAt DESC";
 
             using var cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@count", count);

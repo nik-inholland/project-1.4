@@ -24,6 +24,6 @@ namespace WebApplication3.Models
         }
 
         public OrderItem() { }
-        public decimal LineTotal => Quantity * MenuItem.Price;
+        public decimal LineTotal => Quantity * (MenuItem?.Price ?? 0);
     }
 }
