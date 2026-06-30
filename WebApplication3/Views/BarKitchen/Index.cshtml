@@ -1,0 +1,165 @@
+@model List<WebApplication3.Models.ViewModels.BarKitchenViewModel>
+@using WebApplication3.Models
+@{
+    var mode = ViewBag.Mode as string ?? "Running";
+    var station = ViewBag.Station as string ?? "Kitchen";
+    var canChoose = ViewBag.CanChooseStation as bool? ?? false;
+    var listAction = mode == "Finished" ? "Finished" : "Index";
+    ViewData["Title"] = $"{station} - {mode} Orders";
+}
+
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <h2>@station &mdash; @mode Orders</h2>
+    <div>
+        <a asp-action="Index" asp-route-station="@station" class="btn btn-sm @(mode == "Running" ? "btn-primary" : "btn-outline-primary")">Running</a>
+        <a asp-action="Finished" asp-route-station="@station" class="btn btn-sm @(mode == "Finished" ? "btn-primary" : "btn-outline-primary")">Finished today</a>
+        <a asp-action="@listAction" asp-route-station="@station" class="btn btn-sm btn-outline-secondary">Refresh</a>
+    </div>
+</div>
+
+@* Station switcher - admin/manager only. Bar & kitchen staff are locked to their own station. *@
+@if (canChoose)
+{
+    <div class="mb-3">
+        <span class="me-2 text-muted">View:</span>
+        <a asp-action="@listAction" asp-route-station="Kitchen" class="btn btn-sm @(station == "Kitchen" ? "btn-dark" : "btn-outline-dark")">Kitchen (food)</a>
+        <a asp-action="@listAction" asp-route-station="Bar" class="btn btn-sm @(station == "Bar" ? "btn-dark" : "btn-outline-dark")">Bar (drinks)</a>
+        <a asp-action="@listAction" asp-route-station="All" class="btn btn-sm @(station == "All" ? "btn-dark" : "btn-outline-dark")">All</a>
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No @mode.ToLower() orders right now.</p>
+}
+else
+{
+    <div class="order-grid">
+        @for (int idx = 0; idx < Model.Count; idx++)
+        {
+            var order = Model[idx];
+            <div class="order-card @order.StatusCssClass" style="width: 340px;">
+                <div class="order-link">
+                    <div class="order-text">
+                        @if (mode == "Running" && idx == 0)
+                        {
+                            <span class="badge bg-dark">Next up</span>
+                        }
+                        <h4 class="mt-1">Table @order.TableNumber</h4>
+                        <p class="mb-1">
+                            <small>Ordered @order.CreatedAt.ToString("HH:mm")</small><br />
+                            <strong>Waiting: @order.WaitingMinutes min</strong>
+                        </p>
+                    </div>
+
+                    @foreach (var course in order.Courses)
+                    {
+                        <div class="mb-2 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>@course.CourseName</strong>
+                                @if (mode == "Running" && course.CourseBucket != 0)
+                                {
+                                    <span>
+                                        <form asp-action="ChangeCourseStatus" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="tableOrderId" value="@order.TableOrderID" />
+                                            <input type="hidden" name="courseType" value="@course.CourseBucket" />
+                                            <input type="hidden" name="status" value="@((int)OrderStatus.BeingPrepared)" />
+                                            <input type="hidden" name="station" value="@station" />
+                                            <button type="submit" class="btn btn-sm btn-outline-warning py-0">Preparing</button>
+                                        </form>
+                                        <form asp-action="ChangeCourseStatus" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="tableOrderId" value="@order.TableOrderID" />
+                                            <input type="hidden" name="courseType" value="@course.CourseBucket" />
+                                            <input type="hidden" name="status" value="@((int)OrderStatus.ReadyToBeServed)" />
+                                            <input type="hidden" name="station" value="@station" />
+                                            <button type="submit" class="btn btn-sm btn-outline-success py-0">Ready</button>
+                                        </form>
+                                    </span>
+                                }
+                            </div>
+
+                            <ul class="list-unstyled mb-1">
+                                @foreach (var item in course.Items)
+                                {
+                                    <li class="d-flex justify-content-between align-items-center border-bottom py-1">
+                                        <span>
+                                            @item.Quantity&times; @item.Name
+                                            <span class="badge bg-secondary">@item.ItemStatus</span>
+                                            @if (!string.IsNullOrEmpty(item.Comments))
+                                            {
+                                                <br /><small class="text-muted">&ldquo;@item.Comments&rdquo;</small>
+                                            }
+                                        </span>
+
+                                        @if (mode == "Running")
+                                        {
+                                            <span class="ms-2 text-nowrap">
+                                                @if (item.ItemStatus == OrderStatus.Ordered)
+                                                {
+                                                    <form asp-action="ChangeOrderItemStatus" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="orderItemId" value="@item.OrderItemID" />
+                                                        <input type="hidden" name="status" value="@((int)OrderStatus.BeingPrepared)" />
+                                                        <input type="hidden" name="station" value="@station" />
+                                                        <button type="submit" class="btn btn-sm btn-outline-warning py-0">Prepare</button>
+                                                    </form>
+                                                }
+                                                else if (item.ItemStatus == OrderStatus.BeingPrepared)
+                                                {
+                                                    <form asp-action="ChangeOrderItemStatus" method="post" class="d-inline">
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" name="orderItemId" value="@item.OrderItemID" />
+                                                        <input type="hidden" name="status" value="@((int)OrderStatus.ReadyToBeServed)" />
+                                                        <input type="hidden" name="station" value="@station" />
+                                                        <button type="submit" class="btn btn-sm btn-outline-success py-0">Ready</button>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">&#10003;</span>
+                                                }
+                                            </span>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+
+                @if (mode == "Running")
+                {
+                    <div class="reopen-form">
+                        <form asp-action="ChangeOrderStatus" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="orderId" value="@order.TableOrderID" />
+                            <input type="hidden" name="status" value="@((int)OrderStatus.BeingPrepared)" />
+                            <input type="hidden" name="station" value="@station" />
+                            <button type="submit" class="btn btn-sm btn-warning reopen-btn">Whole order: preparing</button>
+                        </form>
+                        <form asp-action="ChangeOrderStatus" method="post" class="mt-1">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="orderId" value="@order.TableOrderID" />
+                            <input type="hidden" name="status" value="@((int)OrderStatus.ReadyToBeServed)" />
+                            <input type="hidden" name="station" value="@station" />
+                            <button type="submit" class="btn btn-sm btn-success reopen-btn">Whole order: ready</button>
+                        </form>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

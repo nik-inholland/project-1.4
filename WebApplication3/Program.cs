@@ -36,7 +36,11 @@ namespace WebApplication3
             builder.Services.AddScoped<IMenuItemService, MenuItemService>();
             builder.Services.AddScoped<ITableService, TableService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
-           
+
+            // --- Bar/Kitchen ---
+            builder.Services.AddScoped<IBarKitchenRepository, BarKitchenRepository>();
+            builder.Services.AddScoped<IBarKitchenService, BarKitchenService>();
+
             // --- Authentication (Cookie) ---
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
